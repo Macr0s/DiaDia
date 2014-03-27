@@ -8,7 +8,7 @@ import it.uniroma3.diadia.ambienti.Stanza;
  * del labirinto.
  * Ogni attrezzo ha un nome ed un peso.
  *
- * @author  Matteo Filippi
+ * @author  Matteo Filippi, Andrea Salvoni
  * @see Stanza
  * @version 0.1
  *

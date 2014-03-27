@@ -1,5 +1,6 @@
 package it.uniroma3.diadia;
 
+import it.uniroma3.diadia.ambienti.Labirinto;
 import it.uniroma3.diadia.ambienti.Stanza;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 import it.uniroma3.diadia.comandi.Comando;
@@ -18,15 +19,6 @@ import java.util.Scanner;
 
 public class DiaDia {
 	private Partita partita;
-    private static final String MESSAGGIO_BENVENUTO = 
-		"Ti trovi nell'Universita', ma oggi e' diversa dal solito...\n" +
-		"Meglio andare al piu' presto in biblioteca a studiare. Ma dov'e'?\n"+
-		"I locali sono popolati da strani personaggi, " +
-		"alcuni amici, altri... chissa!\n"+
-		"Ci sono attrezzi che potrebbero servirti nell'impresa:\n"+
-		"puoi raccoglierli, usarli, posarli quando ti sembrano inutili\n" +
-		"o regalarli se pensi che possano ingraziarti qualcuno.\n\n"+
-		"Per conoscere le istruzioni usa il comando 'aiuto'.";
     private static String[] elencoComandi = {"vai", "aiuto", "fine", "info", "prendi", "posa", "equipaggia","posaEquipaggiato", "disequipaggia"};
 
     public DiaDia() {
@@ -37,7 +29,7 @@ public class DiaDia {
 		String istruzione; 
 	    Scanner scannerDiLinee;
 
-		System.out.println(MESSAGGIO_BENVENUTO);
+		System.out.println(this.partita.getMessaggioBenvenuto());
 	    scannerDiLinee = new Scanner(System.in);		
 		do		
 			istruzione = scannerDiLinee.nextLine();

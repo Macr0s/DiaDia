@@ -4,8 +4,17 @@ import it.uniroma3.diadia.attrezzi.Attrezzo;
 
 public class Labirinto {
 	
-	private Stanza corrente;
+	private Stanza iniziale;
 	private Stanza vincente;
+	private final String MESSAGGIO_BENVENUTO = 
+				"Ti trovi nell'Universita', ma oggi e' diversa dal solito...\n" +
+				"Meglio andare al piu' presto in biblioteca a studiare. Ma dov'e'?\n"+
+				"I locali sono popolati da strani personaggi, " +
+				"alcuni amici, altri... chissa!\n"+
+				"Ci sono attrezzi che potrebbero servirti nell'impresa:\n"+
+				"puoi raccoglierli, usarli, posarli quando ti sembrano inutili\n" +
+				"o regalarli se pensi che possano ingraziarti qualcuno.\n\n"+
+				"Per conoscere le istruzioni usa il comando 'aiuto'.";
 	
 	public Labirinto(){
 		this.creaStanze();
@@ -46,19 +55,19 @@ public class Labirinto {
 		atrio.addAttrezzo(osso);
 
 		// il gioco comincia nell'atrio
-        this.corrente = atrio;  
+        this.iniziale = atrio;  
 		this.vincente = biblioteca;
     }
     
-    public Stanza getCorrente() {
-		return corrente;
+    public Stanza getIniziale() {
+		return this.iniziale;
 	}
     
     public Stanza getVincente() {
-		return vincente;
+		return this.vincente;
 	}
     
-    public void setCorrente(Stanza corrente) {
-		this.corrente = corrente;
-	}
+    public String getMessaggioBenvenuto(){
+    	return this.MESSAGGIO_BENVENUTO;
+    }
 }

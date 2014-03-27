@@ -8,7 +8,7 @@ import it.uniroma3.diadia.attrezzi.Attrezzo;
  * E' collegata ad altre stanze attraverso delle uscite.
  * Ogni uscita e' associata ad una direzione.
  * 
- * @author Matteo Filippi (a partire da un'idea di Michael Kolling e David J. Barnes)
+ * @author Matteo Filippi, Andrea Salvoni (a partire da un'idea di Michael Kolling e David J. Barnes)
  * @see Attrezzo
  * @version 0.1
 */
@@ -176,7 +176,10 @@ public class Stanza {
 		return true;
 	}
 
-
+	/**
+	 *	Metodo che restituisce le direzioni disponibili dentro la stanza
+	 *	@return String[] di direzioni 
+	 */
 	public String[] getDirezioni() {
 		String[] direzioni = new String[this.numeroStanzeAdiacenti];
 	    for(int i=0; i<this.numeroStanzeAdiacenti; i++)
