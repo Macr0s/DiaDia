@@ -23,7 +23,7 @@ public class Partita {
 	 */
 	public Partita(){
 		this.labirinto = new Labirinto();
-		this.corrente = this.labirinto.getVincente();
+		this.corrente = this.labirinto.getIniziale();
 		this.giocatore = new Giocatore("Mario", "Biondi");
 		this.finita = false;
 	}
@@ -58,7 +58,7 @@ public class Partita {
 	 * @return vero se partita vinta
 	 */
 	public boolean vinta() {
-		return this.getStanzaCorrente()== this.getStanzaVincente();
+		return this.getStanzaCorrente() == this.getStanzaVincente();
 	}
 
 	/**

@@ -23,12 +23,21 @@ public class Giocatore {
 		this.borsa = new Borsa();
 	}
 	
-    public String getNome(){
+	public Giocatore(String nome, String cognome, int cfu, Attrezzo equipaggiato){
+		this(nome, cognome, cfu);
+		this.equipaggiato = equipaggiato;
+	}
+	
+	public String getNome(){
 		return this.nome;
 	}
     
 	public String getCognome(){
 		return this.cognome;
+	}
+	
+	public void setBorsa(Borsa borsa) {
+		this.borsa = borsa;
 	}
 	
 	public Borsa getBorsa(){

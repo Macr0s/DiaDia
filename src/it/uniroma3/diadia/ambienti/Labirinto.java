@@ -72,4 +72,5 @@ public class Labirinto {
     public String getMessaggioBenvenuto(){
     	return this.MESSAGGIO_BENVENUTO;
     }
+
 }
