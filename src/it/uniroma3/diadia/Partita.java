@@ -9,6 +9,8 @@ import it.uniroma3.diadia.giocatore.Giocatore;
  *
  * @author  Matteo Filippi, Andrea Salvoni (da un'idea di Michael Kolling and David J. Barnes)
  * @see Stanza
+ * @see Labirinto
+ * @see Giocatore
  * @version 0.1
  */
 

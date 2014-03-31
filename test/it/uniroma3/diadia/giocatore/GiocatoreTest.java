@@ -2,6 +2,7 @@ package it.uniroma3.diadia.giocatore;
 
 import static org.junit.Assert.*;
 import it.uniroma3.diadia.giocatore.Giocatore;
+import it.uniroma3.diadia.attrezzi.*;
 
 import org.junit.Before;
 import org.junit.Test;

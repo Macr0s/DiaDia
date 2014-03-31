@@ -2,7 +2,15 @@ package it.uniroma3.diadia.giocatore;
 
 import it.uniroma3.diadia.attrezzi.*;
 
-
+/**
+ * Questa classe serve gestire il giocatore memorizzando
+ * i cfu, il suo nome, il suo cognome e la borsa
+ * 
+ * @author Matteo Filippi, Andrea Salvoni (da un'idea di Michael Kolling and David J. Barnes)
+ * @version 0.1
+ * @see Borsa
+ * @see Attrezo
+ */
 public class Giocatore {
 	private final static int DEFAULT_MAX_CFU = 20;
 	private String nome;

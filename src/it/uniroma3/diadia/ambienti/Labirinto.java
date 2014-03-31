@@ -2,7 +2,12 @@ package it.uniroma3.diadia.ambienti;
 
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 /**
- * Labirinto
+ * Questa classe inizializza il labirinto e memorizza 
+ * la stanza iniziale e la stanza vincente
+ * 
+ * @author  Matteo Filippi, Andrea Salvoni (da un'idea di Michael Kolling and David J. Barnes)
+ * @see Stanza
+ * @version 0.1
  */
 public class Labirinto {
 	
@@ -61,14 +66,29 @@ public class Labirinto {
 		this.vincente = biblioteca;
     }
     
+    /**
+     * Questo metodo serve per prendere la stanza iniziale
+     * 
+     * @return La stanza iniziale
+     */
     public Stanza getIniziale() {
 		return this.iniziale;
 	}
     
+    /**
+     * Questo metodo serve per prendere la stenza vincente
+     * 
+     * @return La stanza vincente
+     */
     public Stanza getVincente() {
 		return this.vincente;
 	}
     
+    /**
+     * Questo metodo restituisce il messaggio di benvenuto
+     * 
+     * @return Il messaggio di Benventuo
+     */
     public String getMessaggioBenvenuto(){
     	return this.MESSAGGIO_BENVENUTO;
     }

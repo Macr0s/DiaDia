@@ -2,6 +2,7 @@ package it.uniroma3.diadia.giocatore;
 
 import static org.junit.Assert.*;
 import it.uniroma3.diadia.giocatore.Borsa;
+import it.uniroma3.diadia.attrezzi.*;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -29,7 +30,7 @@ public class BorsaTest {
 	 */
 	@Test
 	public void testAddAttrezzo() {
-		assertTrue(borsa.toString(), this.borsa.addAttrezzo(this.attrezzo))
+		assertTrue(borsa.toString(), this.borsa.addAttrezzo(this.attrezzo));
 	}
 
 	/**

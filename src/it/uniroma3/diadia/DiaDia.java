@@ -13,7 +13,7 @@ import java.util.Scanner;
  *
  *  Questa e' la classe principale crea e istanzia tutte le altre
  *
- * @author  Matteo Filippi (da un'idea di Michael Kolling and David J. Barnes) *
+ * @author  Matteo Filippi, Andrea Salvoni (da un'idea di Michael Kolling and David J. Barnes)
  * @version 0.1
  */
 
