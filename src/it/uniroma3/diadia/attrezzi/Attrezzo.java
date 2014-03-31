@@ -10,7 +10,7 @@ import it.uniroma3.diadia.ambienti.Stanza;
  *
  * @author  Matteo Filippi, Andrea Salvoni
  * @see Stanza
- * @version 0.1
+ * @version 0.2
  *
  */
 public class Attrezzo {

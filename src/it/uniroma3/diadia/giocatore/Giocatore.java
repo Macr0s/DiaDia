@@ -7,7 +7,7 @@ import it.uniroma3.diadia.attrezzi.*;
  * i cfu, il suo nome, il suo cognome e la borsa
  * 
  * @author Matteo Filippi, Andrea Salvoni (da un'idea di Michael Kolling and David J. Barnes)
- * @version 0.1
+ * @version 0.2
  * @see Borsa
  * @see Attrezzo
  */

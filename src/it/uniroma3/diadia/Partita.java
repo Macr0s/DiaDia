@@ -11,7 +11,7 @@ import it.uniroma3.diadia.giocatore.Giocatore;
  * @see Stanza
  * @see Labirinto
  * @see Giocatore
- * @version 0.1
+ * @version 0.2
  */
 
 public class Partita {

@@ -10,7 +10,7 @@ import it.uniroma3.diadia.attrezzi.Attrezzo;
  * 
  * @author Matteo Filippi, Andrea Salvoni (a partire da un'idea di Michael Kolling e David J. Barnes)
  * @see Attrezzo
- * @version 0.1
+ * @version 0.2
 */
 
 public class Stanza {

@@ -2,6 +2,14 @@ package it.uniroma3.diadia.giocatore;
 
 import it.uniroma3.diadia.attrezzi.*;
 
+/**
+ * Questa classe gestisce la borsa del giocatore e i relativi attrezzi
+ * 
+ * @author Matteo Filippi, Andrea Salvoni (da un'idea di Michael Kolling and David J. Barnes)
+ * @see Attrezzo
+ * @version 0.2
+ *
+ */
 public class Borsa {
 	private final static int DEFAULT_PESO_MAX_BORSA = 10;
 	private Attrezzo[] attrezzi;

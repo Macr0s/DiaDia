@@ -11,7 +11,7 @@ import java.util.Scanner;
  *  corrisponde un comando di nome "vai" e parametro "nord").
  *
  * @author  Matteo Filippi (da un'idea di Michael Kolling and David J. Barnes) *
- * @version 0.1
+ * @version 0.2
  */
 
 public class Comando {

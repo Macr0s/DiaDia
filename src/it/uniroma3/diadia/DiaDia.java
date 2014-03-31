@@ -14,7 +14,7 @@ import java.util.Scanner;
  *  Questa e' la classe principale crea e istanzia tutte le altre
  *
  * @author  Matteo Filippi, Andrea Salvoni (da un'idea di Michael Kolling and David J. Barnes)
- * @version 0.1
+ * @version 0.2
  */
 
 public class DiaDia {

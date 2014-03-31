@@ -7,7 +7,7 @@ import it.uniroma3.diadia.attrezzi.Attrezzo;
  * 
  * @author  Matteo Filippi, Andrea Salvoni (da un'idea di Michael Kolling and David J. Barnes)
  * @see Stanza
- * @version 0.1
+ * @version 0.2
  */
 public class Labirinto {
 	

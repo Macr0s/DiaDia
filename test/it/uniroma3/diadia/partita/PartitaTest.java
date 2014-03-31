@@ -1,6 +1,7 @@
-package it.uniroma3.diadia;
+package it.uniroma3.diadia.partita;
 
 import static org.junit.Assert.*;
+import it.uniroma3.diadia.Partita;
 
 import org.junit.Before;
 import org.junit.Test;
