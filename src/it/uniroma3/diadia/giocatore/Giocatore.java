@@ -9,7 +9,7 @@ import it.uniroma3.diadia.attrezzi.*;
  * @author Matteo Filippi, Andrea Salvoni (da un'idea di Michael Kolling and David J. Barnes)
  * @version 0.1
  * @see Borsa
- * @see Attrezo
+ * @see Attrezzo
  */
 public class Giocatore {
 	private final static int DEFAULT_MAX_CFU = 20;
@@ -36,34 +36,73 @@ public class Giocatore {
 		this.equipaggiato = equipaggiato;
 	}
 	
+	/**
+	 * Questo metodo restituisce il nome del giocatore
+	 * 
+	 * @return il nome del giocatore
+	 */
 	public String getNome(){
 		return this.nome;
 	}
     
+	/**
+	 * Questo metodo restituisce il cognome del giocatore
+	 * 
+	 * @return il cognome del giocatore
+	 */
 	public String getCognome(){
 		return this.cognome;
 	}
 	
+	/**
+	 * Questo metodo serve per impostare la borsa dell'utente
+	 * 
+	 * @param borsa la nuova borsa
+	 */
 	public void setBorsa(Borsa borsa) {
 		this.borsa = borsa;
 	}
 	
+	/**
+	 * Qusto metodo restitusice la borsa dell'utente
+	 * 
+	 * @return la borsa dell'utente
+	 */
 	public Borsa getBorsa(){
 		return this.borsa;
 	}
 	
+	/**
+	 * Questo metodo restituisce l'attrezzo equipaggiato
+	 * 
+	 * @return l'oggetto equipaggiato
+	 */
 	public Attrezzo getEquipaggiato() {
 		return this.equipaggiato;
 	}
 	
+	/**
+	 * Questo metodo imposta l'attrezzo equipaggiato
+	 * 
+	 * @param equipaggiato l'attrezzo da equipaggiare
+	 */
 	public void setEquipaggiato(Attrezzo equipaggiato) {
 		this.equipaggiato = equipaggiato;
 	}
 	
+	/**
+	 * Questo metodo restituisce il numero di CFU
+	 * 
+	 * @return il numero di CFU correnti
+	 */
 	public int getCFU(){
 		return this.cfu;
 	}
 	
+	/**
+	 * Questo metodo decremente di uno il numero di CFU
+	 * 
+	 */
 	public void decrementaCFU(){
 		this.cfu--;
 	}
