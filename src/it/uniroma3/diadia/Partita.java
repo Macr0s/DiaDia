@@ -93,6 +93,7 @@ public class Partita {
 	public void decrementaCFU() {
 		this.giocatore.decrementaCFU();		
 	}	
+	
 	/**
 	 * Metodo che restituisce il giocatore
 	 * 

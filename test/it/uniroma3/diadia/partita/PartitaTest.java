@@ -11,6 +11,7 @@ import org.junit.Test;
  * Test della classe Partita
  * 
  * @author Matteo Filippi, Andrea Salvoni
+ * @see Partita
  *
  */
 public class PartitaTest {
@@ -20,13 +21,40 @@ public class PartitaTest {
 	public void setUp() throws Exception {
 		this.partita = new Partita();
 	}
-
+	
 	/**
-	 *  Controlla se la partita Ã¨ finita
+	 *  Controlla se la partita non è finita quando la partita è inizializzata;
 	 */
 	@Test
-	public void testIsFinita() {
+	public void testIsFinita_Iniziata() {
 		assertFalse(this.partita.getStanzaCorrente().toString(),this.partita.isFinita());
+	}
+
+	/**
+	 *  Controlla se la partita è finita attraverso l'invocazione di setFinita();
+	 */
+	@Test
+	public void testIsFinita_Forzata() {
+		this.partita.setFinita();
+		assertTrue(this.partita.getStanzaCorrente().toString(),this.partita.isFinita());
+	}
+	
+	/**
+	 *  Controlla se la partita è finita attraverso lo spostamento nell astanza vincente
+	 */
+	@Test
+	public void testIsFinita_SpostamentoVincente() {
+		this.partita.setStanzaCorrente(this.partita.getStanzaCorrente().getStanzaAdiacente("nord"));
+		assertTrue(this.partita.getStanzaCorrente().toString(),this.partita.isFinita());
+	}
+	
+	/**
+	 *  Controlla se la partita è finita attraverso il raggiungimento dei CFU a 0
+	 */
+	@Test
+	public void testIsFinita_CFU() {
+		this.partita.getGiocatore().setCFU(0);
+		assertTrue(this.partita.getStanzaCorrente().toString(),this.partita.isFinita());
 	}
 
 	/**

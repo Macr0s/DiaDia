@@ -1,6 +1,5 @@
 package it.uniroma3.diadia;
 
-import it.uniroma3.diadia.ambienti.Labirinto;
 import it.uniroma3.diadia.ambienti.Stanza;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 import it.uniroma3.diadia.comandi.Comando;
@@ -34,6 +33,7 @@ public class DiaDia {
 		do		
 			istruzione = scannerDiLinee.nextLine();
 		while (!processaIstruzione(istruzione));
+		scannerDiLinee.close();
 	}   
     
         
@@ -129,7 +129,7 @@ public class DiaDia {
      * un oggetto dalla stanza e se non hai qualcosa equipaggiato lo equipaggia direttamente 
      * oppure se hai qualcosa equipaggiato lo mette in borsa
      * 
-     * @param nomeAttrezzo
+     * @param nomeAttrezzo il nome dell'attrezzo da prendere
      */
 	public void prendi(String nomeAttrezzo){
 		Attrezzo attrezzo = this.partita.getStanzaCorrente().getAttrezzo(nomeAttrezzo);

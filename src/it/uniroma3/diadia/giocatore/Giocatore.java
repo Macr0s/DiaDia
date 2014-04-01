@@ -108,6 +108,15 @@ public class Giocatore {
 	}
 	
 	/**
+	 * Questo metodo imposta il numero corrente di CFU
+	 * 
+	 * @param cfu il nuovo numero corrente di CFU
+	 */
+	public void setCFU(int cfu) {
+		this.cfu = cfu;
+	}
+	
+	/**
 	 * Questo metodo restituisce una rappresentazione stringata del giocatore
 	 * 
 	 * @return la rappresentazione stringata
