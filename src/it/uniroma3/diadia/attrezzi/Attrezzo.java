@@ -45,10 +45,21 @@ public class Attrezzo {
 
    /**
 	* Restituisce una rappresentazione stringa di questo attrezzo
+	* 
 	* @return la rappresentazione stringa
 	*/
    public String toString() {
 		  return this.getNome()+" ("+this.getPeso()+"kg)";
-	   }
+   }
+   
+   /**
+    * Questo metodo verifica se due attrezzi sono uguali
+    * 
+    * @param attrezzo l'attrezzo da confrontare
+    * @return true se i due attrezzi sono uguali altrimenti false
+    */
+   public boolean equals(Attrezzo attrezzo){
+	   return this.nome.equals(attrezzo.getNome()) && this.peso == attrezzo.getPeso();
+   }
 
 }
