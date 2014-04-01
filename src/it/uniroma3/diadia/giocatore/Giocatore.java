@@ -107,6 +107,11 @@ public class Giocatore {
 		this.cfu--;
 	}
 	
+	/**
+	 * Questo metodo restituisce una rappresentazione stringata del giocatore
+	 * 
+	 * @return la rappresentazione stringata
+	 */
 	public String toString(){
 		StringBuilder s = new StringBuilder();
 		s.append("Io sono " + this.nome + " " + this.cognome + "\n");

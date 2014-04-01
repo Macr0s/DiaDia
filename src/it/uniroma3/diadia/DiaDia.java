@@ -123,7 +123,14 @@ public class DiaDia {
     private void fine() {
     	System.out.println("Grazie di aver giocato!");  // si desidera smettere
     }
-
+    
+    /**
+     * Questo metodo gestisce il comando prendi dell'utente, cioè viene preso 
+     * un oggetto dalla stanza e se non hai qualcosa equipaggiato lo equipaggia direttamente 
+     * oppure se hai qualcosa equipaggiato lo mette in borsa
+     * 
+     * @param nomeAttrezzo
+     */
 	public void prendi(String nomeAttrezzo){
 		Attrezzo attrezzo = this.partita.getStanzaCorrente().getAttrezzo(nomeAttrezzo);
 		if (attrezzo == null){
@@ -144,6 +151,12 @@ public class DiaDia {
 			
 	}
 	
+	/**
+	 * Questo metodo gestisce il comando equipaggia dell'utente, cioè prende un oggetto dalla 
+	 * borsa e lo equipaggia effettuando uno scambio se già è stato equipaggiato qualcosa
+	 * 
+	 * @param nomeAttrezzo l'oggetto da equipaggiare
+	 */
 	public void equipaggia(String nomeAttrezzo){
 		Attrezzo attrezzo = this.partita.getGiocatore().getBorsa().removeAttrezzo(nomeAttrezzo);
 		if (attrezzo != null){
@@ -155,6 +168,12 @@ public class DiaDia {
 		}
 	}
 	
+	/**
+	 * Questo metodo gestisce il comando posa dell'utente, cioè posa un oggetto dalla borsa 
+	 * e lo aggiunge alla stanza
+	 * 
+	 * @param nomeAttrezzo il nome dell'attrezzo da posare
+	 */
 	public void posa(String nomeAttrezzo){
 		Attrezzo attrezzo = this.partita.getGiocatore().getBorsa().removeAttrezzo(nomeAttrezzo);
 		if (attrezzo == null){
@@ -170,6 +189,10 @@ public class DiaDia {
 		}
 	}
 	
+	/**
+	 * Questo metodo gestisce il comando posaEquipaggiato, cioè posa l'attrezzo equipaggiato 
+	 * nella stanza
+	 */
 	public void posaEquipaggiato(){
 		Attrezzo attrezzo = this.partita.getGiocatore().getEquipaggiato();
 		if (attrezzo == null){
@@ -185,6 +208,10 @@ public class DiaDia {
 		}
 	}
 	
+	/**
+	 * Questo metodo gestisce il comando disequipaggia dell'utente, cioè posa l'oggetto 
+	 * equipaggiato nella borsa
+	 */
 	public void disequipaggia(){
 		if (this.partita.getGiocatore().getEquipaggiato() != null){
 			if (this.partita.getGiocatore().getBorsa().addAttrezzo(this.partita.getGiocatore().getEquipaggiato())){
