@@ -45,37 +45,40 @@ public class DiaDia {
 	private boolean processaIstruzione(String istruzione) {
 		Comando comandoDaEseguire = new Comando(istruzione);
 		
-		switch(comandoDaEseguire.getNome()){
-			case "fine":
-				this.fine(); 
-				return true;
-			case "vai":
-				this.vai(comandoDaEseguire.getParametro());
-				break;
-			case "aiuto":
-				this.aiuto();
-				break;
-			case "info":
-				System.out.println(this.partita.toString());
-				break;
-			case "posa":
-				this.posa(comandoDaEseguire.getParametro());
-				break;
-			case "prendi":
-				this.prendi(comandoDaEseguire.getParametro());
-				break;
-			case "equipaggia":
-				this.equipaggia(comandoDaEseguire.getParametro());
-				break;
-			case "posaEquipaggiato":
-				this.posaEquipaggiato();
-				break;
-			case "disequipaggia":
-				this.disequipaggia();
-				break;
-			default:
-				System.out.println("Comando sconosciuto");
-		}
+		if (comandoDaEseguire.getNome() != null)
+			switch(comandoDaEseguire.getNome()){
+				case "fine":
+					this.fine(); 
+					return true;
+				case "vai":
+					this.vai(comandoDaEseguire.getParametro());
+					break;
+				case "aiuto":
+					this.aiuto();
+					break;
+				case "info":
+					System.out.println(this.partita.toString());
+					break;
+				case "posa":
+					this.posa(comandoDaEseguire.getParametro());
+					break;
+				case "prendi":
+					this.prendi(comandoDaEseguire.getParametro());
+					break;
+				case "equipaggia":
+					this.equipaggia(comandoDaEseguire.getParametro());
+					break;
+				case "posaEquipaggiato":
+					this.posaEquipaggiato();
+					break;
+				case "disequipaggia":
+					this.disequipaggia();
+					break;
+				default:
+					System.out.println("Comando sconosciuto");
+			}
+		else
+			System.out.println("Comando non inserito");
 		
 		if (this.partita.isFinita()){
 			if (this.partita.vinta()){
