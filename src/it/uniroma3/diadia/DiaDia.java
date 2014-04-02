@@ -135,6 +135,10 @@ public class DiaDia {
      * @param nomeAttrezzo il nome dell'attrezzo da prendere
      */
 	public void prendi(String nomeAttrezzo){
+		if (nomeAttrezzo == null){
+			System.out.println("Quale attrezzo vuoi prendere?");
+			return;
+		}
 		Attrezzo attrezzo = this.partita.getStanzaCorrente().getAttrezzo(nomeAttrezzo);
 		if (attrezzo == null){
 			System.out.println("Attezzo non presente nella stanza");
@@ -161,6 +165,10 @@ public class DiaDia {
 	 * @param nomeAttrezzo l'oggetto da equipaggiare
 	 */
 	public void equipaggia(String nomeAttrezzo){
+		if (nomeAttrezzo == null){
+			System.out.println("Quale attrezzo vuoi equipaggiare?");
+			return;
+		}
 		Attrezzo attrezzo = this.partita.getGiocatore().getBorsa().removeAttrezzo(nomeAttrezzo);
 		if (attrezzo != null){
 			if (this.partita.getGiocatore().getEquipaggiato() != null &&
@@ -183,6 +191,10 @@ public class DiaDia {
 	 * @param nomeAttrezzo il nome dell'attrezzo da posare
 	 */
 	public void posa(String nomeAttrezzo){
+		if (nomeAttrezzo == null){
+			System.out.println("Quale attrezzo vuoi posare?");
+			return;
+		}
 		Attrezzo attrezzo = this.partita.getGiocatore().getBorsa().removeAttrezzo(nomeAttrezzo);
 		if (attrezzo == null){
 			System.out.println("Oggetto non trovato in borsa");
