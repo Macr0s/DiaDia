@@ -166,11 +166,12 @@ public class Borsa {
 			return false;
 		}
 		
-		for(int i = 0; i < this.getNumeroAttrezzi(); i++){
-			if (!this.attrezzi[i].equals(borsa.getAttrezzi()[i])){
-				return false;
-			}
+		boolean uguale = true;	
+		for(int i = 0; i < this.getNumeroAttrezzi() && uguale; i++){
+			for (int j = 0; j < this.getNumeroAttrezzi() && uguale; j++){
+				uguale = this.attrezzi[i].equals(borsa.getAttrezzi()[j]);
+			}	
 		}
-		return true;
+		return uguale;
 	}
 }

@@ -160,9 +160,14 @@ public class DiaDia {
 	public void equipaggia(String nomeAttrezzo){
 		Attrezzo attrezzo = this.partita.getGiocatore().getBorsa().removeAttrezzo(nomeAttrezzo);
 		if (attrezzo != null){
-			this.partita.getGiocatore().getBorsa().addAttrezzo(this.partita.getGiocatore().getEquipaggiato());
-			this.partita.getGiocatore().setEquipaggiato(attrezzo);
-			System.out.println("Oggetto equipaggiato");
+			if (this.partita.getGiocatore().getEquipaggiato() != null &&
+					!this.partita.getGiocatore().getBorsa().addAttrezzo(this.partita.getGiocatore().getEquipaggiato())){
+				this.partita.getGiocatore().getBorsa().addAttrezzo(attrezzo);
+				System.out.println("Attrzzo non equipaggiato perchè l'attrezzo equipaggiato non entra in borsa");
+			}else{
+				this.partita.getGiocatore().setEquipaggiato(attrezzo);
+				System.out.println("Oggetto equipaggiato");
+			}
 		}else{
 			System.out.println("Oggetto non trovato in borsa");
 		}
