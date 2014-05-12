@@ -55,6 +55,17 @@ public class Attrezzo {
    /**
     * Questo metodo verifica se due attrezzi sono uguali
     * 
+    * @param o l'attrezzo da confrontare
+    * @return true se i due attrezzi sono uguali altrimenti false
+    */
+   @Override
+   public boolean equals(Object o){
+	   return this.equals((Attrezzo)o);
+   }
+   
+   /**
+    * Questo metodo verifica se due attrezzi sono uguali
+    * 
     * @param attrezzo l'attrezzo da confrontare
     * @return true se i due attrezzi sono uguali altrimenti false
     */

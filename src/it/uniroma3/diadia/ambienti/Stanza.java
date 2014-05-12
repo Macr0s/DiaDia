@@ -15,10 +15,10 @@ import it.uniroma3.diadia.attrezzi.Attrezzo;
 
 public class Stanza {
 	private static final int NUMERO_MASSIMO_DIREZIONI = 4;
-	private static final int NUMERO_MASSIMO_ATTREZZI = 10;
+	protected static final int NUMERO_MASSIMO_ATTREZZI = 10;
 	private String nome;
-    private Attrezzo[] attrezzi;
-    private int numeroAttrezzi;
+    protected Attrezzo[] attrezzi;
+    protected int numeroAttrezzi;
     private Stanza[] stanzeAdiacenti;
     private int numeroStanzeAdiacenti;
 	private String[] direzioni;
@@ -59,7 +59,7 @@ public class Stanza {
 
     /**
      * Restituisce la stanza adiacente nella direzione specificata
-     * @param direzione
+     * @param direzione la direzione
      */
 	public Stanza getStanzaAdiacente(String direzione) {
         Stanza stanza = null;
@@ -82,7 +82,18 @@ public class Stanza {
      * @return la descrizione della stanza
      */
     public String getDescrizione() {
-        return this.toString();
+    	String s = new String();
+    	s += this.nome;
+    	s += "\nUscite: ";
+    	for (String direzione : this.direzioni)
+    		if (direzione!=null)
+    			s += " " + direzione;
+    	s += "\nAttrezzi nella stanza: ";
+    	for (Attrezzo attrezzo : this.attrezzi) {
+    		if (attrezzo != null)	
+    			s += attrezzo.toString()+" ";
+    	}
+    	return s;
     }
 
     /**
@@ -115,18 +126,7 @@ public class Stanza {
 	* @return la rappresentazione stringa
 	*/
     public String toString() {
-    	String s = new String();
-    	s += this.nome;
-    	s += "\nUscite: ";
-    	for (String direzione : this.direzioni)
-    		if (direzione!=null)
-    			s += " " + direzione;
-    	s += "\nAttrezzi nella stanza: ";
-    	for (Attrezzo attrezzo : this.attrezzi) {
-    		if (attrezzo != null)	
-    			s += attrezzo.toString()+" ";
-    	}
-    	return s;
+    	return this.getDescrizione();
     }
 
     /**
@@ -137,7 +137,7 @@ public class Stanza {
 		boolean trovato;
 		trovato = false;
 		for (Attrezzo attrezzo : this.attrezzi) {
-			if (attrezzo.getNome().equals(nomeAttrezzo))
+			if (attrezzo != null && attrezzo.getNome().equals(nomeAttrezzo))
 				trovato = true;
 		}
 		return trovato;

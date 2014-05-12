@@ -155,6 +155,17 @@ public class Borsa {
 	/**
 	 * Questo metodo stabilisce se due borse sono uguali
 	 * 
+	 * @param o la borsa da confrontare con quella attuale
+	 * @return true se le due borse sono uguali altrimenti false
+	 */
+	@Override
+	public boolean equals(Object o){
+		return this.equals((Borsa) o);
+	}
+	
+	/**
+	 * Questo metodo stabilisce se due borse sono uguali
+	 * 
 	 * @param borsa la borsa da confrontare con quella attuale
 	 * @return true se le due borse sono uguali altrimenti false
 	 */
