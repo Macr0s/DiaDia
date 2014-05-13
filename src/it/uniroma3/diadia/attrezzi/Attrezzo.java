@@ -72,5 +72,9 @@ public class Attrezzo {
    public boolean equals(Attrezzo attrezzo){
 	   return this.nome.equals(attrezzo.getNome()) && this.peso == attrezzo.getPeso();
    }
-
+   
+   @Override
+   public int hashCode(){
+	   return this.nome.hashCode() + this.peso;
+   }
 }
