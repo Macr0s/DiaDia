@@ -40,12 +40,22 @@ public final class StanzaMagicaProtected extends Stanza{
      * @param attrezzo l'attrezzo da mettere nella stanza.
      * @return true se riesce ad aggiungere l'attrezzo, false atrimenti.
      */
-	@SuppressWarnings("static-access")
 	@Override
 	public boolean addAttrezzo(Attrezzo attrezzo){
 		if (this.contatoreAttrezziPrelevati > this.sogliaMagica)
 			attrezzo = this.modificaAttrezzo(attrezzo);
 		
-		return this.attrezzi.add(attrezzo);
+		return this.attrezzi.put(attrezzo.getNome(),attrezzo)!=null;
+	}
+	
+	/**
+	 * Rimuove un attrezzo dalla stanza (ricerca in base al nome).
+	 * @param attrezzo Contiene l'oggetto da rimuovere
+	 * @return true se l'attrezzo e' stato rimosso, false altrimenti
+	 */
+	@Override
+	public boolean removeAttrezzo(Attrezzo attrezzo) {
+		this.contatoreAttrezziPrelevati++;
+		return this.attrezzi.remove(attrezzo.getNome()) != null;
 	}
 }

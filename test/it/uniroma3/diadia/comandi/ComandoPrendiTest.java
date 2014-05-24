@@ -2,6 +2,8 @@ package it.uniroma3.diadia.comandi;
 
 import static org.junit.Assert.*;
 import it.uniroma3.diadia.Partita;
+import it.uniroma3.diadia.attrezzi.*;
+import it.uniroma3.diadia.giocatore.*;
 
 import org.junit.Before;
 import org.junit.Test;

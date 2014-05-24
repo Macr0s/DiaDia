@@ -2,6 +2,7 @@ package it.uniroma3.diadia.ambienti;
 
 import java.util.*;
 
+import it.uniroma3.diadia.Partita;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 
 /**
@@ -17,8 +18,9 @@ import it.uniroma3.diadia.attrezzi.Attrezzo;
 
 public class Stanza {
 	private String nome;
-    protected List<Attrezzo> attrezzi;
+    protected HashMap<String, Attrezzo> attrezzi;
     private HashMap<String, Stanza> stanzeAdiacenti;
+    private Partita partita;
     
     /**
      * Crea una stanza. Non ci sono stanze adiacenti, non ci sono attrezzi.
@@ -26,7 +28,7 @@ public class Stanza {
      */
     public Stanza(String nome) {
         this.nome = nome;
-        this.attrezzi = new ArrayList<>();
+        this.attrezzi = new HashMap<>();
         this.stanzeAdiacenti = new HashMap<>();
     }
 
@@ -64,13 +66,11 @@ public class Stanza {
     	String s = new String();
     	s += this.nome;
     	s += "\nUscite: ";
-    	Iterator<String> direzioni = this.stanzeAdiacenti.keySet().iterator();
-    	while (direzioni.hasNext())
-    		s += " " + direzioni.next();
+    	for (String direzioni: this.stanzeAdiacenti.keySet())
+    		s += " " + direzioni;
     	s += "\nAttrezzi nella stanza: ";
-    	Iterator<Attrezzo> attrezzi = this.attrezzi.iterator();
-    	while (attrezzi.hasNext()) {	
-    		s += attrezzi.next().toString()+" ";
+    	for (Attrezzo attrezzo: this.attrezzi.values()) {	
+    		s += attrezzo.toString()+" ";
     	}
     	return s;
     }
@@ -80,7 +80,7 @@ public class Stanza {
      * @return la collezione di attrezzi nella stanza.
      */
     public Attrezzo[] getAttrezzi() {
-        return this.attrezzi.toArray(new Attrezzo[0]);
+        return this.attrezzi.values().toArray(new Attrezzo[0]);
     }
 
     /**
@@ -89,7 +89,7 @@ public class Stanza {
      * @return true se riesce ad aggiungere l'attrezzo, false atrimenti.
      */
     public boolean addAttrezzo(Attrezzo attrezzo) {
-        return this.attrezzi.add(attrezzo);
+        return this.attrezzi.put(attrezzo.getNome(),attrezzo) == null;
     }
 
    /**
@@ -106,12 +106,7 @@ public class Stanza {
 	* @return true se l'attrezzo esiste nella stanza, false altrimenti.
 	*/
 	public boolean hasAttrezzo(String nomeAttrezzo) {
-		Iterator<Attrezzo> i = this.attrezzi.iterator();
-		while (i.hasNext()) {
-			if (i.next().getNome().equals(nomeAttrezzo))
-				return true;
-		}
-		return false;
+		return this.attrezzi.containsKey(nomeAttrezzo);
 	}
 
 	/**
@@ -121,15 +116,7 @@ public class Stanza {
      * 		   null se l'attrezzo non e' presente.
 	 */
 	public Attrezzo getAttrezzo(String nomeAttrezzo) {
-		Attrezzo attrezzoCercato= null;
-		Iterator<Attrezzo> i = this.attrezzi.iterator();
-		Attrezzo attrezzoTemp;
-		while (i.hasNext()) {
-			attrezzoTemp = i.next();
-			if (attrezzoTemp.getNome().equals(nomeAttrezzo))
-				attrezzoCercato = attrezzoTemp;
-		}
-		return attrezzoCercato;	
+		return this.attrezzi.get(nomeAttrezzo);	
 	}
 
 	/**
@@ -138,7 +125,7 @@ public class Stanza {
 	 * @return true se l'attrezzo e' stato rimosso, false altrimenti
 	 */
 	public boolean removeAttrezzo(Attrezzo attrezzo) {
-		return this.attrezzi.remove((Attrezzo) attrezzo);
+		return this.attrezzi.remove(attrezzo.getNome()) != null;
 	}
 
 	/**
@@ -148,4 +135,22 @@ public class Stanza {
 	public String[] getDirezioni() {
 		return this.stanzeAdiacenti.keySet().toArray(new String[0]);
     }
+	
+	/**
+	 * Metodo che restituisce la partita corrente
+	 * 
+	 * @return la partita corrente
+	 */
+	public Partita getPartita() {
+		return partita;
+	}
+	
+	/**
+	 * Meotod che imposta la partita corrente
+	 * 
+	 * @param partita la partita corrente
+	 */
+	public void setPartita(Partita partita) {
+		this.partita = partita;
+	}
 }

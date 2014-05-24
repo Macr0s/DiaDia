@@ -12,7 +12,7 @@ import org.junit.Test;
  * 
  * @author Matteo Filippi, Andrea Salvoni
  * @version 0.2
- * @see Paritita
+ * @see Partita
  * @see Comando
  * @see Attrezzo
  * @see ComandoPosa

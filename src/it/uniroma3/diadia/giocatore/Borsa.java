@@ -1,8 +1,13 @@
 package it.uniroma3.diadia.giocatore;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import it.uniroma3.diadia.attrezzi.*;
 
@@ -16,9 +21,27 @@ import it.uniroma3.diadia.attrezzi.*;
  */
 public class Borsa {
 	private final static int DEFAULT_PESO_MAX_BORSA = 10;
-	private List<Attrezzo> attrezzi;
+	private HashMap<String, Attrezzo> attrezzi;
 	private int pesoMax;
 	private int pesoCorrente;
+	
+	private class Nome implements Comparator<Attrezzo>{
+		@Override
+		public int compare(Attrezzo o1, Attrezzo o2) {
+			return o1.getNome().compareTo(o2.getNome());
+		}
+	}
+	
+	private class Peso implements Comparator<Attrezzo>{
+		@Override
+		public int compare(Attrezzo o1, Attrezzo o2) {
+			if (o1.getPeso() - o2.getPeso() == 0){
+				return o1.compareTo(o2);
+			}else{
+				return o1.getPeso() - o2.getPeso();
+			}
+		}
+	}
 	
 	public Borsa(){
 		this(DEFAULT_PESO_MAX_BORSA);
@@ -26,7 +49,7 @@ public class Borsa {
 	
 	public Borsa(int pesoMax){
 		this.pesoMax = pesoMax;
-		this.attrezzi = new ArrayList<>();
+		this.attrezzi = new HashMap<>();
 		this.pesoCorrente = 0;
 	}
 	/**
@@ -40,7 +63,7 @@ public class Borsa {
 			return false;
 		if (this.getPeso() + attrezzo.getPeso() > this.getPesoMax())
 			return false;
-		this.attrezzi.add(attrezzo);
+		this.attrezzi.put(attrezzo.getNome(), attrezzo);
 		this.pesoCorrente += attrezzo.getPeso();
 		return true;
 	}
@@ -61,15 +84,7 @@ public class Borsa {
 	 * @return se l'attrezzo sta nella borsa restituisce l'attrezzo altrimenti null
 	 */
 	public Attrezzo getAttrezzo(String nomeAttrezzo){
-		Iterator<Attrezzo> i = this.attrezzi.iterator();
-		Attrezzo attrezzoCorrente = null;
-		while(i.hasNext()){
-			attrezzoCorrente = i.next();
-			if (attrezzoCorrente.getNome().equals(nomeAttrezzo)){
-				return attrezzoCorrente;
-			}
-		}
-		return null;
+		return this.attrezzi.get(nomeAttrezzo);
 	}
 	
 	/**
@@ -107,16 +122,7 @@ public class Borsa {
 	 * @return l'attrezzo rimosso
 	 */
 	public Attrezzo removeAttrezzo(String nomeAttrezzo){
-		Iterator<Attrezzo> i = this.attrezzi.iterator();
-		Attrezzo attrezzoCorrente = null;
-		while (i.hasNext()){
-			attrezzoCorrente = i.next();
-			if (attrezzoCorrente.getNome().equals(nomeAttrezzo)){
-				this.attrezzi.remove((Attrezzo) attrezzoCorrente);
-				return attrezzoCorrente;
-			}
-		}
-		return null;
+		return this.attrezzi.remove(nomeAttrezzo);
 	}
 	
 	/**
@@ -128,10 +134,9 @@ public class Borsa {
 		StringBuilder s = new StringBuilder();
 		
 		if (!this.isEmpty()){
-			Iterator<Attrezzo> i = this.attrezzi.iterator();
 			s.append("Contenuto borsa ("+this.getPeso()+"kg/"+this.getPesoMax()+"kg): "); 
-				while (i.hasNext()) 
-					s.append(i.next().toString()+" ");
+			for (Attrezzo a: this.attrezzi.values()) 
+				s.append(a.toString()+" ");
 		}else{
 			s.append("Borsa vuota");
 		}
@@ -144,7 +149,7 @@ public class Borsa {
 	 * @return l'array di attrezzi
 	 */
 	public Attrezzo[] getAttrezzi(){
-		return this.attrezzi.toArray(new Attrezzo[0]);
+		return this.attrezzi.values().toArray(new Attrezzo[0]);
 	}
 	
 	/**
@@ -174,20 +179,76 @@ public class Borsa {
 	 * @return true se le due borse sono uguali altrimenti false
 	 */
 	public boolean equals(Borsa borsa){
-		if (this.hashCode() == borsa.hashCode()){
+		if (this.hashCode() != borsa.hashCode()){
 			return false;
 		}
 		
 		for(Attrezzo attrezzo: borsa.getAttrezzi()){
-			if (attrezzo != null && !this.attrezzi.contains((Attrezzo) attrezzo)){
+			if (attrezzo != null && !this.attrezzi.containsValue((Attrezzo) attrezzo)){
 				return false;
 			}
 		}
 		return true;
 	}
 	
+	/**
+	 * Metodo che calcola hashCode della borsa
+	 * 
+	 * @return l'hasdcode della borsa
+	 */
 	@Override
 	public int hashCode(){
 		return this.attrezzi.hashCode() + this.getPeso() + this.getPesoMax() + this.attrezzi.size();
+	}
+	
+	/**
+	 * Metodo che restituisce il contenuto della borsa in un determinato ordine
+	 * 
+	 * @param c il comparator che serve per ordinare il contenuto della borsa
+	 * @return il contenuto della borsa sottoforma di lista
+	 */
+	public List<Attrezzo>  getContenutoPer(Comparator<Attrezzo> c){
+		List<Attrezzo> l = new ArrayList<>();
+		l.addAll(this.attrezzi.values());
+		Collections.sort(l, c);
+		return l;
+	}
+	
+	/**
+	 * Metodo che restituisce il contenuto della borsa ordinata per peso
+	 * 
+	 * @return il contenuto della borsa sottoforma di lista
+	 */
+	public List<Attrezzo> getContentutoPerPeso(){
+		return this.getContenutoPer(new Peso());
+	}
+	
+	/**
+	 * Metodo che restituisce il contenuto della borsa ordinata per nome
+	 * 
+	 * @return il contenuto della borsa sottoforma di lista
+	 */
+	public List<Attrezzo> getContentutoPerNome(){
+		return this.getContenutoPer(new Nome());
+	}
+	
+	/**
+	 * Metodo che restituisce il contenuto della borsa raggruppato per peso
+	 * 
+	 * @return il contenuto della borsa raggruppato per peso sottoforma di mappa
+	 */
+	public Map<Integer,Set<Attrezzo>> getContenutoRaggruppatoPerPeso(){
+		HashMap<Integer, Set<Attrezzo>> m = new HashMap<>();
+		Set<Attrezzo> s = null;
+		
+		for(Attrezzo a: this.attrezzi.values()){
+			if(m.containsKey(new Integer(a.getPeso())))
+				s = m.get(new Integer(a.getPeso()));
+			else
+				s = new HashSet<Attrezzo>();
+			s.add(a);
+			m.put(new Integer(a.getPeso()), s);
+		}
+		return m;
 	}
 }

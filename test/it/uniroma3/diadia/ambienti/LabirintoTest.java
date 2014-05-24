@@ -1,6 +1,7 @@
 package it.uniroma3.diadia.ambienti;
 
 import static org.junit.Assert.*;
+import it.uniroma3.diadia.Partita;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -14,10 +15,12 @@ import org.junit.Test;
  */
 public class LabirintoTest {
 	private Labirinto labirinto;
+	private Partita partita;
 	
 	@Before
 	public void setUp() throws Exception {
-		this.labirinto = new Labirinto();
+		this.partita = new Partita();
+		this.labirinto = this.partita.getLabirinto();
 	}
 	
 	/**
@@ -25,7 +28,7 @@ public class LabirintoTest {
 	 */
 	@Test
 	public void testGetIniziale() {
-		assertEquals("Atrio\nUscite:  nord est sud ovest\nAttrezzi nella stanza: osso (1kg) ", this.labirinto.getIniziale().toString());
+		assertEquals("Qui c'è un buio pesto", this.labirinto.getIniziale().toString());
 	}
 	
 	/**

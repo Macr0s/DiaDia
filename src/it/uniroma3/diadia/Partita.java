@@ -24,10 +24,10 @@ public class Partita {
 	 *	Crea la partita istanziando labirinto e giocatore 
 	 */
 	public Partita(){
-		this.labirinto = new Labirinto();
-		this.corrente = this.labirinto.getIniziale();
 		this.giocatore = new Giocatore("Mario", "Biondi");
 		this.finita = false;
+		this.labirinto = new Labirinto(this);
+		this.corrente = this.labirinto.getIniziale();
 	}
 	
 	/**
@@ -123,5 +123,13 @@ public class Partita {
 	 */
 	public String getMessaggioBenvenuto(){
 		return this.labirinto.getMessaggioBenvenuto();
+	}
+	
+	public Labirinto getLabirinto() {
+		return labirinto;
+	}
+	
+	public void setLabirinto(Labirinto labirinto) {
+		this.labirinto = labirinto;
 	}
 }

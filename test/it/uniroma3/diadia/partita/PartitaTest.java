@@ -79,7 +79,7 @@ public class PartitaTest {
 	 */
 	@Test
 	public void testToString(){
-		assertEquals("Io sono Mario Biondi\nCFU: 20\nEquipaggiato: Niente\nBorsa vuota\n\nAtrio\nUscite:  nord est sud ovest\nAttrezzi nella stanza: osso (1kg) \n", this.partita.toString());
+		assertEquals("Io sono Mario Biondi\nCFU: 20\nEquipaggiato: Niente\nBorsa vuota\n\nQui c'è un buio pesto\n", this.partita.toString());
 	}
 
 }

@@ -39,6 +39,7 @@ public class GiocatoreTest {
 	 */
 	@Test
 	public void testGetEquipaggiato() {
+		this.giocatore.setEquipaggiato(this.attrezzo);
 		assertEquals(this.attrezzo, this.giocatore.getEquipaggiato());
 	}
 	
@@ -49,7 +50,7 @@ public class GiocatoreTest {
 	public void testSetEquipaggiato() {
 		Attrezzo nuovoAttrezzo = new Attrezzo("palla", 2);
 		this.giocatore.setEquipaggiato(nuovoAttrezzo);
-		assertEquals(this.attrezzo, this.giocatore.getEquipaggiato());
+		assertEquals(nuovoAttrezzo, this.giocatore.getEquipaggiato());
 	}
 
 }

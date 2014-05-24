@@ -1,6 +1,7 @@
 package it.uniroma3.diadia.ambienti;
 
 import static org.junit.Assert.*;
+import it.uniroma3.diadia.Partita;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 
 import org.junit.Before;
@@ -18,10 +19,13 @@ public class StanzaBloccataTest {
 	private StanzaBloccata bloccata;
 	private Stanza stanza;
 	private Attrezzo chiave;
+	private Partita partita;
 
 	@Before
 	public void setUp() throws Exception {
+		this.partita = new Partita();
 		this.bloccata = new StanzaBloccata("bagno", "est", "chiave");
+		this.bloccata.setPartita(this.partita);
 		this.stanza = new Stanza("stanza");
 		this.bloccata.impostaStanzaAdiacente("est", this.stanza);
 		this.chiave = new Attrezzo("chiave", 1);
@@ -55,7 +59,7 @@ public class StanzaBloccataTest {
 	 */
 	@Test
 	public void testDirezioneBloccata_Descrizione() {
-		assertEquals(this.bloccata.toString(), "bagno\nUscite:  est\nQui qualcosa non va, le porte non sono porte\nAttrezzi nella stanza: ", this.bloccata.getDescrizione());
+		assertEquals(this.bloccata.toString(),"Qui qualcosa non va, le porte non sono porte" , this.bloccata.getDescrizione());
 	}
 	
 	/**
@@ -65,8 +69,8 @@ public class StanzaBloccataTest {
 	 */
 	@Test
 	public void testDirezioneBloccataAttrezzo_Descrizione() {
-		this.bloccata.addAttrezzo(this.chiave);
-		assertEquals(this.bloccata.toString(), "bagno\nUscite:  est\nAttrezzi nella stanza: chiave (1kg) ", this.bloccata.getDescrizione());
+		this.partita.getGiocatore().getBorsa().addAttrezzo(this.chiave);
+		assertEquals(this.bloccata.toString(), "bagno\nUscite:  est\nAttrezzi nella stanza: ", this.bloccata.getDescrizione());
 	}
 
 }

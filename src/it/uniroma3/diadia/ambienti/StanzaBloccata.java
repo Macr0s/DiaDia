@@ -37,21 +37,21 @@ public class StanzaBloccata extends Stanza{
 	@Override
 	public String getDescrizione(){
 		StringBuilder s = new StringBuilder();
-    	s.append(super.getNome());
-    	s.append("\nUscite: ");
-    	for (String direzione : super.getDirezioni())
-    		if (direzione!=null){
-    			s.append(" " + direzione);
-    			
-    		}
-    	if (!super.hasAttrezzo(this.direzioneChiave)){
-			s.append("\nQui qualcosa non va, le porte non sono porte");
+    	if (!this.getPartita().getGiocatore().getBorsa().hasAttrezzo(this.direzioneChiave)){
+			s.append("Qui qualcosa non va, le porte non sono porte");
+		}else{
+			s.append(super.getNome());
+	    	s.append("\nUscite: ");
+	    	for (String direzione : super.getDirezioni())
+	    		if (direzione!=null){
+	    			s.append(" " + direzione);	
+	    	}
+	    	s.append("\nAttrezzi nella stanza: ");
+	    	for (Attrezzo attrezzo : this.getAttrezzi()) {
+	    		if (attrezzo != null)	
+	    			s.append(attrezzo.toString()+" ");
+	    	}
 		}
-    	s.append("\nAttrezzi nella stanza: ");
-    	for (Attrezzo attrezzo : this.attrezzi) {
-    		if (attrezzo != null)	
-    			s.append(attrezzo.toString()+" ");
-    	}
     	return s.toString();
 	}
 	

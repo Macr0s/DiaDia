@@ -1,5 +1,6 @@
 package it.uniroma3.diadia.ambienti;
 
+import it.uniroma3.diadia.Partita;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 /**
  * Questa classe inizializza il labirinto e memorizza 
@@ -13,6 +14,7 @@ public class Labirinto {
 	
 	private Stanza iniziale;
 	private Stanza vincente;
+	private Partita partita;
 	private final String MESSAGGIO_BENVENUTO = 
 				"Ti trovi nell'Universita', ma oggi e' diversa dal solito...\n" +
 				"Meglio andare al piu' presto in biblioteca a studiare. Ma dov'e'?\n"+
@@ -23,7 +25,8 @@ public class Labirinto {
 				"o regalarli se pensi che possano ingraziarti qualcuno.\n\n"+
 				"Per conoscere le istruzioni usa il comando 'aiuto'.";
 	
-	public Labirinto(){
+	public Labirinto(Partita partita){
+		this.partita = partita;
 		this.creaStanze();
 	}
 	
@@ -39,10 +42,15 @@ public class Labirinto {
     	
 		/* crea stanze del labirinto */
 		Stanza atrio = new StanzaBuia("Atrio");
+		atrio.setPartita(this.partita);
 		Stanza aulaN11 = new StanzaMagica("Aula N11", 1);
+		aulaN11.setPartita(this.partita);
 		Stanza aulaN10 = new Stanza("Aula N10");
+		aulaN10.setPartita(this.partita);
 		Stanza laboratorio = new StanzaBloccata("Laboratorio Campus", "ovest", "passepartout");
+		laboratorio.setPartita(this.partita);
 		Stanza biblioteca = new Stanza("Biblioteca");
+		biblioteca.setPartita(this.partita);
 		
 		/* collega le stanze */
 		atrio.impostaStanzaAdiacente("nord", biblioteca);
@@ -94,5 +102,22 @@ public class Labirinto {
     public String getMessaggioBenvenuto(){
     	return this.MESSAGGIO_BENVENUTO;
     }
-
+    
+    /**
+     * Metodo che restituisce la partita corrente
+     * 
+     * @return la partita corrente
+     */
+    public Partita getPartita() {
+		return partita;
+	}
+    
+    /**
+     * Metodo che imposta la partita corrente
+     * 
+     * @param partita la partita corrente
+     */
+    public void setPartita(Partita partita) {
+		this.partita = partita;
+	}
 }
