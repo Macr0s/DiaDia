@@ -19,8 +19,10 @@ public class ComandoUsa implements Comando {
 
 	@Override
 	public String esegui() {
-		
-		return null;
+		if(this.p.getGiocatore().getEquipaggiato()!=null){
+			return this.p.getGiocatore().getEquipaggiato().usa(this.paramentro, this.p);
+		}
+		return "Non ha nessun attrezzo equipaggiato";
 	}
 
 }
