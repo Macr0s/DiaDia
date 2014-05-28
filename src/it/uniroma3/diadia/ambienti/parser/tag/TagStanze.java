@@ -3,7 +3,7 @@ package it.uniroma3.diadia.ambienti.parser.tag;
 import it.uniroma3.diadia.ambienti.Stanza;
 import it.uniroma3.diadia.ambienti.parser.Tag;
 
-public class Stanze extends Tag {
+public class TagStanze extends Tag {
 
 	@Override
 	public void elabora(String argomenti) {

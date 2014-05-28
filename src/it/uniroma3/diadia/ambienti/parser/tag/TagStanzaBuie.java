@@ -4,7 +4,7 @@ import it.uniroma3.diadia.ambienti.StanzaBuia;
 import it.uniroma3.diadia.ambienti.parser.FormatoFileNonValidoException;
 import it.uniroma3.diadia.ambienti.parser.Tag;
 
-public class StanzaBuie extends Tag {
+public class TagStanzaBuie extends Tag {
 
 	@Override
 	public void elabora(String argomenti) throws FormatoFileNonValidoException {

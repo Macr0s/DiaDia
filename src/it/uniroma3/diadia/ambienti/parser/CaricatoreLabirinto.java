@@ -35,7 +35,7 @@ public class CaricatoreLabirinto {
 		String[] s = riga.split(": ");
 		if (s.length == 2){
 			try{
-				Class<Tag> c = (Class<Tag>) Class.forName("it.uniroma3.diadia.ambienti.parser.tag."+s[0]);
+				Class<Tag> c = (Class<Tag>) Class.forName("it.uniroma3.diadia.ambienti.parser.tag.Tag"+s[0]);
 				Tag tag = c.newInstance();
 				tag.setInsiemi(this);
 				tag.elabora(s[1]);

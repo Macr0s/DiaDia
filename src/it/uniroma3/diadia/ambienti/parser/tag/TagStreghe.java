@@ -4,7 +4,7 @@ import it.uniroma3.diadia.ambienti.parser.FormatoFileNonValidoException;
 import it.uniroma3.diadia.ambienti.parser.Tag;
 import it.uniroma3.diadia.personaggi.Strega;
 
-public class Streghe extends Tag {
+public class TagStreghe extends Tag {
 
 	@Override
 	public void elabora(String argomenti) throws FormatoFileNonValidoException {

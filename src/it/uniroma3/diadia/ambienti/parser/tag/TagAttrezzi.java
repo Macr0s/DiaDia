@@ -5,7 +5,7 @@ import it.uniroma3.diadia.ambienti.parser.FormatoFileNonValidoException;
 import it.uniroma3.diadia.ambienti.parser.Tag;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 
-public class Attrezzi extends Tag {
+public class TagAttrezzi extends Tag {
 
 	@Override
 	public void elabora(String argomenti) throws FormatoFileNonValidoException {
