@@ -1,8 +1,6 @@
 package it.uniroma3.diadia.comandi.lista;
 
-import it.uniroma3.diadia.Partita;
 import it.uniroma3.diadia.comandi.AbstractComando;
-import it.uniroma3.diadia.comandi.Comando;
 import it.uniroma3.diadia.personaggi.AbstractPersonaggio;
 
 public class ComandoSaluta extends AbstractComando {
