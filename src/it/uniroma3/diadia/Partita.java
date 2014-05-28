@@ -92,6 +92,11 @@ public class Partita {
 	public int getCFU() {
 		return this.giocatore.getCFU();
 	}
+	
+	public void setCFU(int cfu){
+		this.giocatore.setCFU(cfu);
+	}
+	
 	/**
 	 * Metodo che descrementa i CFU del giocatore
 	 */
