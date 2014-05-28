@@ -28,7 +28,7 @@ public class LabirintoTest {
 	 */
 	@Test
 	public void testGetIniziale() {
-		assertEquals("Qui c'è un buio pesto", this.labirinto.getIniziale().toString());
+		assertEquals("Qui c'Ã¨ un buio pesto", this.labirinto.getIniziale().toString());
 	}
 	
 	/**

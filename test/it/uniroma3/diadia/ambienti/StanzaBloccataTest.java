@@ -34,7 +34,7 @@ public class StanzaBloccataTest {
 	/**
 	 * Questa classe verifica il corretto funzionamento
 	 * del metodo getStanzaAdiacente nel caso che nella
-	 * stanza non c'è l'oggetto chiave
+	 * stanza non c'Ã¨ l'oggetto chiave
 	 */
 	@Test
 	public void testDirezioneBloccata_StanzaAdiacente() {
@@ -44,7 +44,7 @@ public class StanzaBloccataTest {
 	/**
 	 * Questa classe verifica il corretto funzionamento
 	 * del metodo getStanzaAdiacente nel caso che nella
-	 * stanza c'è l'oggetto chiave
+	 * stanza c'Ã¨ l'oggetto chiave
 	 */
 	@Test
 	public void testDirezioneBloccataAttrezzo_StanzaAdiacente() {
@@ -55,7 +55,7 @@ public class StanzaBloccataTest {
 	/**
 	 * Questa classe verifica il corretto funzionamento
 	 * del metodo getDescrizione nel caso che nella
-	 * stanza non c'è l'oggetto chiave
+	 * stanza non c'Ã¨ l'oggetto chiave
 	 */
 	@Test
 	public void testDirezioneBloccata_Descrizione() {
@@ -65,7 +65,7 @@ public class StanzaBloccataTest {
 	/**
 	 * Questa classe verifica il corretto funzionamento
 	 * del metodo getDescrizione nel caso che nella
-	 * stanza c'è l'oggetto chiave
+	 * stanza c'Ã¨ l'oggetto chiave
 	 */
 	@Test
 	public void testDirezioneBloccataAttrezzo_Descrizione() {

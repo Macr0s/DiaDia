@@ -4,9 +4,9 @@ import it.uniroma3.diadia.attrezzi.Attrezzo;
 
 /**
  * Questa classe gestisce un tipo di stanza che prende
- * il nome di stanza bloocata. La stanza bloocata è una 
- * stanza che ha una direzione blocccata e può essere
- * aperta solo se nella stanza c'è un determinato oggetto
+ * il nome di stanza bloocata. La stanza bloocata Ã¨ una 
+ * stanza che ha una direzione blocccata e puÃ² essere
+ * aperta solo se nella stanza c'Ã¨ un determinato oggetto
  * 
  * @author Matteo FIlippi, Andrea Salvoni
  * @version 0.2

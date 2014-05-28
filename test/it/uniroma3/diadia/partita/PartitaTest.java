@@ -23,7 +23,7 @@ public class PartitaTest {
 	}
 	
 	/**
-	 *  Controlla se la partita non è finita quando la partita è inizializzata;
+	 *  Controlla se la partita non Ã¨ finita quando la partita Ã¨ inizializzata;
 	 */
 	@Test
 	public void testIsFinita_Iniziata() {
@@ -31,7 +31,7 @@ public class PartitaTest {
 	}
 
 	/**
-	 *  Controlla se la partita è finita attraverso l'invocazione di setFinita();
+	 *  Controlla se la partita Ã¨ finita attraverso l'invocazione di setFinita();
 	 */
 	@Test
 	public void testIsFinita_Forzata() {
@@ -40,7 +40,7 @@ public class PartitaTest {
 	}
 	
 	/**
-	 *  Controlla se la partita è finita attraverso lo spostamento nell astanza vincente
+	 *  Controlla se la partita Ã¨ finita attraverso lo spostamento nell astanza vincente
 	 */
 	@Test
 	public void testIsFinita_SpostamentoVincente() {
@@ -49,7 +49,7 @@ public class PartitaTest {
 	}
 	
 	/**
-	 *  Controlla se la partita è finita attraverso il raggiungimento dei CFU a 0
+	 *  Controlla se la partita Ã¨ finita attraverso il raggiungimento dei CFU a 0
 	 */
 	@Test
 	public void testIsFinita_CFU() {
@@ -79,7 +79,7 @@ public class PartitaTest {
 	 */
 	@Test
 	public void testToString(){
-		assertEquals("Io sono Mario Biondi\nCFU: 20\nEquipaggiato: Niente\nBorsa vuota\n\nQui c'è un buio pesto\n", this.partita.toString());
+		assertEquals("Io sono Mario Biondi\nCFU: 20\nEquipaggiato: Niente\nBorsa vuota\n\nQui c'ï¿½ un buio pesto\n", this.partita.toString());
 	}
 
 }

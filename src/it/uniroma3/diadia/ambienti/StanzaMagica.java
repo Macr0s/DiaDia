@@ -3,7 +3,7 @@ package it.uniroma3.diadia.ambienti;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 /**
  * Questa classe gestisce la stanza magico. La stanza
- * Magica è un tipo di stanza dove ogni oggetto 
+ * Magica Ã¨ un tipo di stanza dove ogni oggetto 
  * raddoppia il peso e inverte il nome
  * 
  * @author Matteo Filippi, Andrea Salvoni

@@ -2,9 +2,9 @@ package it.uniroma3.diadia.ambienti;
 
 /**
  * Questa stanza gestisce la stanza buia. La
- * stanza buia è un tipo di stanza dove al posto della
- * descrizione della stanza appare "Qui c'è un buio
- * pesto" se nella stanza non c'è un determinato
+ * stanza buia Ã¨ un tipo di stanza dove al posto della
+ * descrizione della stanza appare "Qui c'Ã¨ un buio
+ * pesto" se nella stanza non c'Ã¨ un determinato
  * oggetto
  * 
  * @author Matteo Filippi, Andrea Salvoni
@@ -34,6 +34,6 @@ public class StanzaBuia extends Stanza{
 		if (super.hasAttrezzo(this.nomeAttrezzoVedere)){
 			return super.getDescrizione();
 		}
-		return "Qui c'è un buio pesto";
+		return "Qui c'Ã¨ un buio pesto";
 	}
 }

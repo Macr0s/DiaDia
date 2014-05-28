@@ -56,7 +56,7 @@ public class Borsa {
 	 * Questo metodo serve per aggiungere un attrezzo alla borsa
 	 * 
 	 * @param attrezzo il nuovo attrezzo della borsa
-	 * @return true se l'attrezzo è stato aggiunto alla borsa altrimenti false
+	 * @return true se l'attrezzo Ã¨ stato aggiunto alla borsa altrimenti false
 	 */
 	public boolean addAttrezzo(Attrezzo attrezzo){
 		if (attrezzo == null) 
@@ -69,7 +69,7 @@ public class Borsa {
 	}
 	
 	/**
-	 * Questo metodo restituisce il massimo peso che può contentere la borsa
+	 * Questo metodo restituisce il massimo peso che puÃ² contentere la borsa
 	 * 
 	 * @return il peso massimo
 	 */
@@ -97,19 +97,19 @@ public class Borsa {
 	}
 	
 	/**
-	 * Questo metodo restituisce un booleano per indicare se la borsa è vuota
+	 * Questo metodo restituisce un booleano per indicare se la borsa Ã¨ vuota
 	 * 
-	 * @return true se la borsa è vuota altrimenti false
+	 * @return true se la borsa Ã¨ vuota altrimenti false
 	 */
 	public boolean isEmpty(){
 		return this.attrezzi.isEmpty();
 	}
 	
 	/**
-	 * Questo metodo restituisce un booleano per indicare se un'attrezzo è contenuto nella borsa
+	 * Questo metodo restituisce un booleano per indicare se un'attrezzo Ã¨ contenuto nella borsa
 	 * 
 	 * @param nomeAttrezzo il nome dell'attrezzo
-	 * @return tre se è contenuto altrimenti false
+	 * @return tre se Ã¨ contenuto altrimenti false
 	 */
 	public boolean hasAttrezzo(String nomeAttrezzo){
 		return this.getAttrezzo(nomeAttrezzo) != null;

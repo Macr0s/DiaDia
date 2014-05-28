@@ -26,17 +26,17 @@ public class StanzaBuiaTest {
 	/**
 	 * Questo test verifica il corretto funzionamento
 	 * del metodo getDescrizione quando nella stanza
-	 * non c'è l'oggetto lanterna
+	 * non c'Ã¨ l'oggetto lanterna
 	 */
 	@Test
 	public void testBuiaDescrizione() {
-		assertEquals(this.segrete.toString(), "Qui c'è un buio pesto", this.segrete.getDescrizione());
+		assertEquals(this.segrete.toString(), "Qui c'Ã¨ un buio pesto", this.segrete.getDescrizione());
 	}
 	
 	/**
 	 * Questo test verifica il corretto funzionamento
 	 * del metodo getDescrizione quando nella stanza
-	 * c'è l'oggetto lanterna
+	 * c'Ã¨ l'oggetto lanterna
 	 */
 	@Test
 	public void testBuiaAttrezzoDescrizione() {
