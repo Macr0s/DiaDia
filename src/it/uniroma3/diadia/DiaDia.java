@@ -1,6 +1,5 @@
 package it.uniroma3.diadia;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import it.uniroma3.diadia.ambienti.parser.FormatoFileNonValidoException;
@@ -22,7 +21,7 @@ public class DiaDia {
 	private Partita partita;
 	private InterfacciaUtenteConsole io;
     
-    public DiaDia() throws FormatoFileNonValidoException, ClassNotFoundException, IOException {
+    public DiaDia() throws FormatoFileNonValidoException, IOException {
     	this.io = new InterfacciaUtenteConsole();
     	this.partita = new Partita();
     	
