@@ -19,7 +19,7 @@ public class ComandoUsa implements Comando {
 
 	@Override
 	public String esegui() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
