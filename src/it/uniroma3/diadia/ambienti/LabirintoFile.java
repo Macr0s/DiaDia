@@ -22,6 +22,7 @@ public class LabirintoFile extends Labirinto {
     * 
     * @return La stanza iniziale
     */
+	@Override
    public Stanza getIniziale() {
 		return this.caricatore.getStanzaIniziale();
 	}
@@ -31,6 +32,7 @@ public class LabirintoFile extends Labirinto {
     * 
     * @return La stanza vincente
     */
+	@Override
    public Stanza getVincente() {
 		return this.caricatore.getStanzaVincente();
 	}
@@ -40,6 +42,7 @@ public class LabirintoFile extends Labirinto {
     * 
     * @return la partita corrente
     */
+	@Override
    public Partita getPartita() {
 		return partita;
 	}
@@ -49,6 +52,7 @@ public class LabirintoFile extends Labirinto {
     * 
     * @param partita la partita corrente
     */
+	@Override
    public void setPartita(Partita partita) {
 		this.partita = partita;
 	}

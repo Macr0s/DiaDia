@@ -34,5 +34,5 @@ public interface Comando {
 	/**
 	 * Questo prototipo permette di eseguire il comando
 	 */
-	public String esegui();
+	public abstract String esegui();
 }
