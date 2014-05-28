@@ -11,17 +11,7 @@ import it.uniroma3.diadia.Partita;
  * @see Partita
  *
  */
-public class ComandoSconosciuto implements Comando {
-
-	@Override
-	public void setPartita(Partita p) {
-		
-	}
-
-	@Override
-	public void setParamentro(String params) {
-		
-	}
+public class ComandoSconosciuto extends AbstractComando {
 
 	@Override
 	public String esegui() {
