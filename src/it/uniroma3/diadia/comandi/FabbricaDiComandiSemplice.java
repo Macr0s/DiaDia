@@ -3,6 +3,7 @@ package it.uniroma3.diadia.comandi;
 import java.util.Scanner;
 
 import it.uniroma3.diadia.Partita;
+import it.uniroma3.diadia.comandi.lista.*;
 
 /**
  * Questa classe implementa la gestione dei comandi
@@ -30,7 +31,7 @@ public class FabbricaDiComandiSemplice implements FabbricaDiComandi {
 	}
 
 	@Override
-	public boolean esegui() {
+	public String esegui() {
 		Comando comando;
 		if (this.nome != null)
 			switch(this.nome){

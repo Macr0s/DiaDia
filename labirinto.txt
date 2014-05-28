@@ -1,0 +1,27 @@
+//Definizione stanza
+Stanze: N10, Biblioteca
+StanzaBloccate: Campus ovest passepartout
+StanzaBuie: Atrio lanterna
+StanzaMagiche: N11 1
+
+//Definizione Attrezzi
+Attrezzi: lanterna 3 N10, osso 1 N11, passepartout 1 Atrio
+Attrezzi: pappa 1, spada 2, Vino 4, Pozione 0
+
+//Definizione Uscite
+Uscite: Atrio nord Biblioteca, Atrio est N11, Atrio sud N10, Atrio ovest Campus
+Uscite: N11 est Campus, N11 ovest Atrio
+Uscite: N10 nord Atrio, N10 est N11, N10 ovest Campus
+Uscite: Campus est Atrio, Campus ovest N11
+Uscite: Biblioteca sud Atrio
+
+//Definizione personaggi
+Cani: Fuffi ciao pappa spada, beethoven uofff osso Vino
+AggiungiPersonaggi: Fuffi N10, beethoven N11
+Streghe: Morgana muahmuah
+Maghi: Merlino Ehila! Pozione
+AggiungiPersonaggi: Morgana Campus, Merlino Atrio
+
+//Definizioni condizioni di gioco
+Inizio: Atrio
+Vincente: Biblioteca

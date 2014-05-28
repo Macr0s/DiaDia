@@ -1,9 +1,11 @@
 package it.uniroma3.diadia;
 
-import it.uniroma3.diadia.comandi.FabbricaDiComandi;
-import it.uniroma3.diadia.comandi.FabbricaDiComandiSemplice;
+import java.io.FileNotFoundException;
 
-import java.util.Scanner;
+import it.uniroma3.diadia.ambienti.parser.FormatoFileNonValidoException;
+import it.uniroma3.diadia.comandi.FabbricaDiComandi;
+import it.uniroma3.diadia.comandi.FabbricaDiComandiRiflessione;
+import it.uniroma3.diadia.io.InterfacciaUtenteConsole;
 
 /**
  *  Classe principale di diadia, un semplice gioco di ruolo ambientato al dia.
@@ -17,21 +19,29 @@ import java.util.Scanner;
 
 public class DiaDia {
 	private Partita partita;
+	private Sessione sessione;
+	private InterfacciaUtenteConsole io;
     
-    public DiaDia() {
-    	this.partita = new Partita();
+    public DiaDia() throws FileNotFoundException, FormatoFileNonValidoException {
+    	this.sessione = new Sessione();
+    	this.io = new InterfacciaUtenteConsole();
+    	
+    	if (this.sessione.verificaSessione()){
+    		try {
+				this.partita = this.sessione.caricaSessione();
+			} catch (FileNotFoundException e) {
+				this.partita = new Partita();
+	    		this.partita.setSessione(this.sessione);
+			}
+    	}else{
+    		this.partita = new Partita();
+    		this.partita.setSessione(this.sessione);
+    	}
     }
 
 	public void gioca() {
-		String istruzione; 
-	    Scanner scannerDiLinee;
-
-		System.out.println(this.partita.getMessaggioBenvenuto());
-	    scannerDiLinee = new Scanner(System.in);		
-		do		
-			istruzione = scannerDiLinee.nextLine();
-		while (!processaIstruzione(istruzione));
-		scannerDiLinee.close();
+		this.io.mostraMessaggio(this.partita.getMessaggioBenvenuto());
+		while (processaIstruzione(this.io.prendiIstruzione())){}
 	}   
     
         
@@ -41,24 +51,31 @@ public class DiaDia {
 	 * @return true se l'istruzione e' eseguita e il gioco continua, false altrimenti
 	 */
 	private boolean processaIstruzione(String istruzione) {
-		FabbricaDiComandi fabbrica = new FabbricaDiComandiSemplice();
+		FabbricaDiComandi fabbrica = new FabbricaDiComandiRiflessione();
 		fabbrica.setIstruzione(istruzione);
 		fabbrica.setPartita(this.partita);
-		boolean risultato = fabbrica.esegui();
+		String risultato = fabbrica.esegui();
 		
-		if (this.partita.isFinita() && risultato){
+		if (istruzione.startsWith("fine")) return false;
+		
+		if (this.partita.isFinita()){
 			if (this.partita.vinta()){
-				System.out.println("Hai vinto!");
+				this.io.mostraMessaggio("Hai vinto!");
 			}else{
-				System.out.println("Hai perso!");
+				this.io.mostraMessaggio("Hai perso!");
 			}
-			return true;
+			return false;
 		}
-		return !risultato;
+		this.io.mostraMessaggio(risultato);
+		return true;
 	}  
 
-	public static void main(String[] argc) {
-		DiaDia gioco = new DiaDia();
-		gioco.gioca();
+	public static void main(String[] argc){
+		try{
+			DiaDia gioco = new DiaDia();
+			gioco.gioca();
+		}catch(Exception e){
+			System.err.println(e.getMessage());
+		}
 	}
 }

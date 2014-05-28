@@ -24,9 +24,8 @@ public class ComandoSconosciuto implements Comando {
 	}
 
 	@Override
-	public boolean esegui() {
-		System.out.println("Comando sconosciuto");
-		return true;
+	public String esegui() {
+		return "Comando sconosciuto";
 	}
 
 }

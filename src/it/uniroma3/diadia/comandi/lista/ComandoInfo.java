@@ -1,9 +1,10 @@
-package it.uniroma3.diadia.comandi;
+package it.uniroma3.diadia.comandi.lista;
 
 import it.uniroma3.diadia.Partita;
+import it.uniroma3.diadia.comandi.Comando;
 
 /**
- * Questa classe implementa il comando non inserito
+ * Questa classe implmenenta il comando info
  * 
  * @author Matteo Filippi, Andrea Salvoni
  * @version 0.2
@@ -11,21 +12,23 @@ import it.uniroma3.diadia.Partita;
  * @see Partita
  *
  */
-public class ComandoNonInserito implements Comando {
+public class ComandoInfo implements Comando {
+	private Partita partita;
 
 	@Override
 	public void setPartita(Partita p) {
-		
+		this.partita = p;
 	}
 
 	@Override
 	public void setParamentro(String params) {
 		
+
 	}
 
 	@Override
 	public String esegui() {
-		return "Comando non inserito";
+		return this.partita.toString();
 	}
 
 }

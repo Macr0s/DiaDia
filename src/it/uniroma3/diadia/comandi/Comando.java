@@ -15,7 +15,7 @@ public interface Comando {
 	/**
 	 * Questa variabile gestisce l'elenco dei comandi
 	 */
-	public static String[] elencoComandi = {"vai", "aiuto", "fine", "info", "prendi", "posa", "equipaggia","posaEquipaggiato", "disequipaggia"};
+	public static String[] elencoComandi = {"vai", "aiuto", "fine", "info", "prendi", "posa", "equipaggia","posaEquipaggiato", "disequipaggia","interagisci","saluta", "regala", "usa"};
 	
 	/**
 	 * Questo prototipo permette di impostare la partita
@@ -34,5 +34,5 @@ public interface Comando {
 	/**
 	 * Questo prototipo permette di eseguire il comando
 	 */
-	public boolean esegui();
+	public String esegui();
 }

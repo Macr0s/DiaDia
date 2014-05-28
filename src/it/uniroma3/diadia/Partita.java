@@ -1,7 +1,9 @@
 package it.uniroma3.diadia;
 
-import it.uniroma3.diadia.ambienti.Labirinto;
-import it.uniroma3.diadia.ambienti.Stanza;
+import java.io.FileNotFoundException;
+
+import it.uniroma3.diadia.ambienti.*;
+import it.uniroma3.diadia.ambienti.parser.FormatoFileNonValidoException;
 import it.uniroma3.diadia.giocatore.Giocatore;
 
 /**
@@ -19,14 +21,17 @@ public class Partita {
 	private Giocatore giocatore;
 	private Labirinto labirinto;
 	private Stanza corrente;
+	private Sessione sessione;
 	
 	/**
 	 *	Crea la partita istanziando labirinto e giocatore 
+	 * @throws FormatoFileNonValidoException 
+	 * @throws FileNotFoundException 
 	 */
-	public Partita(){
+	public Partita() throws FileNotFoundException, FormatoFileNonValidoException{
 		this.giocatore = new Giocatore("Mario", "Biondi");
 		this.finita = false;
-		this.labirinto = new Labirinto(this);
+		this.labirinto = new LabirintoFile(this);
 		this.corrente = this.labirinto.getIniziale();
 	}
 	
@@ -125,11 +130,36 @@ public class Partita {
 		return this.labirinto.getMessaggioBenvenuto();
 	}
 	
+	/**
+	 * Metodo che restistuisce il labirinto corrente
+	 * 
+	 * @return
+	 */
 	public Labirinto getLabirinto() {
 		return labirinto;
 	}
 	
 	public void setLabirinto(Labirinto labirinto) {
 		this.labirinto = labirinto;
+	}
+	
+	public Stanza getCorrente() {
+		return corrente;
+	}
+	 
+	public Sessione getSessione() {
+		return sessione;
+	}
+	
+	public void setCorrente(Stanza corrente) {
+		this.corrente = corrente;
+	}
+	
+	public void setGiocatore(Giocatore giocatore) {
+		this.giocatore = giocatore;
+	}
+	
+	public void setSessione(Sessione sessione) {
+		this.sessione = sessione;
 	}
 }

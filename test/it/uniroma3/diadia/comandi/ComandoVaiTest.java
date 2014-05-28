@@ -2,6 +2,7 @@ package it.uniroma3.diadia.comandi;
 
 import static org.junit.Assert.*;
 import it.uniroma3.diadia.Partita;
+import it.uniroma3.diadia.comandi.lista.ComandoVai;
 
 import org.junit.Before;
 import org.junit.Test;
