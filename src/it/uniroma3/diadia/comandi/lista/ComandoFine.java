@@ -1,6 +1,7 @@
 package it.uniroma3.diadia.comandi.lista;
 
 import it.uniroma3.diadia.Partita;
+import it.uniroma3.diadia.comandi.AbstractComando;
 import it.uniroma3.diadia.comandi.Comando;
 
 /**
@@ -12,17 +13,7 @@ import it.uniroma3.diadia.comandi.Comando;
  * @see Partita
  *
  */
-public class ComandoFine implements Comando {
-
-	@Override
-	public void setPartita(Partita p) {
-
-	}
-
-	@Override
-	public void setParamentro(String params) {
-
-	}
+public class ComandoFine extends AbstractComando {
 
 	@Override
 	public String esegui() {
