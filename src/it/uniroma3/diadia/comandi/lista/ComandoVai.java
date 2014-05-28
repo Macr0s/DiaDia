@@ -2,6 +2,7 @@ package it.uniroma3.diadia.comandi.lista;
 
 import it.uniroma3.diadia.Partita;
 import it.uniroma3.diadia.ambienti.Stanza;
+import it.uniroma3.diadia.comandi.AbstractComando;
 import it.uniroma3.diadia.comandi.Comando;
 
 /**
@@ -17,32 +18,20 @@ import it.uniroma3.diadia.comandi.Comando;
  * @see Stanza
  *
  */
-public class ComandoVai implements Comando{
-	String direzione;
-	Partita partita;
-
-	@Override
-	public void setPartita(Partita p) {
-		this.partita = p;
-	}
-
-	@Override
-	public void setParamentro(String params) {
-		this.direzione = params;
-	}
+public class ComandoVai extends AbstractComando{
 
 	@Override
 	public String esegui() {
-		if(this.direzione==null)
+		if(super.getParametro()==null)
 			 return "Dove vuoi andare ?";
-		 Stanza prossimaStanza = this.partita.getStanzaCorrente().getStanzaAdiacente(this.direzione);
+		 Stanza prossimaStanza = super.getPartita().getStanzaCorrente().getStanzaAdiacente(super.getParametro());
 		 if (prossimaStanza == null)
 			 return "Direzione inesistente";
 		 else {
-			this.partita.setStanzaCorrente(prossimaStanza);
-			this.partita.decrementaCFU();
+			super.getPartita().setStanzaCorrente(prossimaStanza);
+			super.getPartita().decrementaCFU();
 		 }
-		 return partita.getStanzaCorrente().getDescrizione();
+		 return super.getPartita().getStanzaCorrente().getDescrizione();
 	}
 
 }

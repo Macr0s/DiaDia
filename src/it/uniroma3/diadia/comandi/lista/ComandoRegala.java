@@ -1,30 +1,19 @@
 package it.uniroma3.diadia.comandi.lista;
 
 import it.uniroma3.diadia.Partita;
+import it.uniroma3.diadia.comandi.AbstractComando;
 import it.uniroma3.diadia.comandi.Comando;
 
-public class ComandoRegala implements Comando {
-	private Partita partita;
-	private String paramentro;
-
-	@Override
-	public void setPartita(Partita p) {
-		this.partita = p;
-	}
-
-	@Override
-	public void setParamentro(String params) {
-		this.paramentro = params;
-	}
+public class ComandoRegala extends AbstractComando {
 	
 	@Override
 	public String esegui() {
-		if (this.partita.getStanzaCorrente().getPersonaggio() == null){
+		if (super.getPartita().getStanzaCorrente().getPersonaggio() == null){
 			return "Non ci sono personaggi nella stanza";
-		}else if (this.partita.getGiocatore().getBorsa().hasAttrezzo(this.paramentro)){
-			return this.partita.getStanzaCorrente().getPersonaggio().riceviRegalo(this.partita.getGiocatore().getBorsa().getAttrezzo(this.paramentro), this.partita);
-		}else if (this.partita.getGiocatore().getEquipaggiato() != null && this.partita.getGiocatore().getEquipaggiato().getNome().equals(this.paramentro)){
-			return this.partita.getStanzaCorrente().getPersonaggio().riceviRegalo(this.partita.getGiocatore().getEquipaggiato(), this.partita);
+		}else if (super.getPartita().getGiocatore().getBorsa().hasAttrezzo(super.getParametro())){
+			return super.getPartita().getStanzaCorrente().getPersonaggio().riceviRegalo(super.getPartita().getGiocatore().getBorsa().getAttrezzo(super.getParametro()), super.getPartita());
+		}else if (super.getPartita().getGiocatore().getEquipaggiato() != null && super.getPartita().getGiocatore().getEquipaggiato().getNome().equals(super.getParametro())){
+			return super.getPartita().getStanzaCorrente().getPersonaggio().riceviRegalo(super.getPartita().getGiocatore().getEquipaggiato(), super.getPartita());
 		}else{
 			return "Attrezzo non trovato";
 		}

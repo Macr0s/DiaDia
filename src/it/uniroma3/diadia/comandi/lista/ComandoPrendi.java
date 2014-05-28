@@ -4,6 +4,7 @@ import it.uniroma3.diadia.Partita;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 import it.uniroma3.diadia.giocatore.*;
 import it.uniroma3.diadia.ambienti.*;
+import it.uniroma3.diadia.comandi.AbstractComando;
 import it.uniroma3.diadia.comandi.Comando;
 
 /**
@@ -20,36 +21,24 @@ import it.uniroma3.diadia.comandi.Comando;
  * @see Giocatore
  *
  */
-public class ComandoPrendi implements Comando {
-	private Partita partita;
-	private String nomeAttrezzo;
-
-	@Override
-	public void setPartita(Partita p) {
-		this.partita = p;
-	}
-
-	@Override
-	public void setParamentro(String params) {
-		this.nomeAttrezzo = params;
-	}
+public class ComandoPrendi extends AbstractComando {
 
 	@Override
 	public String esegui() {
-		if (this.nomeAttrezzo == null){
+		if (super.getParametro() == null){
 			return "Quale attrezzo vuoi prendere?";
 		}
-		Attrezzo attrezzo = this.partita.getStanzaCorrente().getAttrezzo(nomeAttrezzo);
+		Attrezzo attrezzo = super.getPartita().getStanzaCorrente().getAttrezzo(super.getParametro());
 		if (attrezzo == null){
 			return "Attezzo non presente nella stanza";
 		}
 		
-		if (this.partita.getGiocatore().getEquipaggiato() == null){
-			this.partita.getGiocatore().setEquipaggiato(attrezzo);
-			this.partita.getStanzaCorrente().removeAttrezzo(attrezzo);
+		if (super.getPartita().getGiocatore().getEquipaggiato() == null){
+			super.getPartita().getGiocatore().setEquipaggiato(attrezzo);
+			super.getPartita().getStanzaCorrente().removeAttrezzo(attrezzo);
 			return "Attrezzo equipaggiato";
-		}else if (this.partita.getGiocatore().getBorsa().addAttrezzo(attrezzo)){
-			this.partita.getStanzaCorrente().removeAttrezzo(attrezzo);
+		}else if (super.getPartita().getGiocatore().getBorsa().addAttrezzo(attrezzo)){
+			super.getPartita().getStanzaCorrente().removeAttrezzo(attrezzo);
 			return "Attrezzo messo in borsa";
 		}else{
 			return "Borsa piena";
