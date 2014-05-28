@@ -16,12 +16,11 @@ import it.uniroma3.diadia.giocatore.Giocatore;
  * @version 0.2
  */
 
-public class Partita {
+public class Partita{
 	private boolean finita;
 	private Giocatore giocatore;
 	private Labirinto labirinto;
 	private Stanza corrente;
-	private Sessione sessione;
 	
 	/**
 	 *	Crea la partita istanziando labirinto e giocatore 
@@ -151,10 +150,6 @@ public class Partita {
 	public Stanza getCorrente() {
 		return corrente;
 	}
-	 
-	public Sessione getSessione() {
-		return sessione;
-	}
 	
 	public void setCorrente(Stanza corrente) {
 		this.corrente = corrente;
@@ -164,7 +159,4 @@ public class Partita {
 		this.giocatore = giocatore;
 	}
 	
-	public void setSessione(Sessione sessione) {
-		this.sessione = sessione;
-	}
 }

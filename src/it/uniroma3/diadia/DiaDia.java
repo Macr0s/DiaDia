@@ -1,6 +1,7 @@
 package it.uniroma3.diadia;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import it.uniroma3.diadia.ambienti.parser.FormatoFileNonValidoException;
 import it.uniroma3.diadia.comandi.FabbricaDiComandi;
@@ -19,24 +20,12 @@ import it.uniroma3.diadia.io.InterfacciaUtenteConsole;
 
 public class DiaDia {
 	private Partita partita;
-	private Sessione sessione;
 	private InterfacciaUtenteConsole io;
     
-    public DiaDia() throws FileNotFoundException, FormatoFileNonValidoException {
-    	this.sessione = new Sessione();
+    public DiaDia() throws FormatoFileNonValidoException, ClassNotFoundException, IOException {
     	this.io = new InterfacciaUtenteConsole();
+    	this.partita = new Partita();
     	
-    	if (this.sessione.verificaSessione()){
-    		try {
-				this.partita = this.sessione.caricaSessione();
-			} catch (FileNotFoundException e) {
-				this.partita = new Partita();
-	    		this.partita.setSessione(this.sessione);
-			}
-    	}else{
-    		this.partita = new Partita();
-    		this.partita.setSessione(this.sessione);
-    	}
     }
 
 	public void gioca() {
