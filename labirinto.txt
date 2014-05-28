@@ -6,7 +6,8 @@ StanzaMagiche: N11 1
 
 //Definizione Attrezzi
 Attrezzi: lanterna 3 N10, osso 1 N11, passepartout 1 Atrio
-Attrezzi: pappa 1, spada 2, Vino 4, Pozione 0
+Attrezzi: pappa 1, spada 2, Vino 4, 
+Pozioni: Pozione 0 -2
 
 //Definizione Uscite
 Uscite: Atrio nord Biblioteca, Atrio est N11, Atrio sud N10, Atrio ovest Campus
