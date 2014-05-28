@@ -1,5 +1,6 @@
 package it.uniroma3.diadia.attrezzi;
 
+import it.uniroma3.diadia.Partita;
 import it.uniroma3.diadia.ambienti.Stanza;
 
 /**
@@ -95,4 +96,7 @@ public class Attrezzo implements Comparable<Attrezzo> {
 		this.nome = nome;
 	}
 	
+	public String usa(String parametro, Partita p){
+		return "Questo oggetto non ha nulla";
+	}
 }
