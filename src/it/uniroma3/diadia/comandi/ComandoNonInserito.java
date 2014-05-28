@@ -11,17 +11,7 @@ import it.uniroma3.diadia.Partita;
  * @see Partita
  *
  */
-public class ComandoNonInserito implements Comando {
-
-	@Override
-	public void setPartita(Partita p) {
-		
-	}
-
-	@Override
-	public void setParamentro(String params) {
-		
-	}
+public class ComandoNonInserito extends AbstractComando {
 
 	@Override
 	public String esegui() {
