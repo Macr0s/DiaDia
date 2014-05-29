@@ -4,6 +4,15 @@ import it.uniroma3.diadia.ambienti.parser.FormatoFileNonValidoException;
 import it.uniroma3.diadia.ambienti.parser.Tag;
 import it.uniroma3.diadia.personaggi.Cane;
 
+/**
+ * Questa classe gestisce i tag Cani
+ * 
+ * @author Matteo Filippi, Andrea Salvoni
+ * @see Tag
+ * @see FormatoFileNonValidoException
+ * @version 0.4
+ *
+ */
 public class TagCani extends Tag {
 
 	@Override
