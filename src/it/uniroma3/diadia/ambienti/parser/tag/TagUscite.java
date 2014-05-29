@@ -3,6 +3,15 @@ package it.uniroma3.diadia.ambienti.parser.tag;
 import it.uniroma3.diadia.ambienti.parser.FormatoFileNonValidoException;
 import it.uniroma3.diadia.ambienti.parser.Tag;
 
+/**
+ * Questa classe gestisce i Tag Uscite
+ * 
+ * @author Matteo Filippi
+ * @see Tag
+ * @see FormatoFileNonValidoException
+ * @versione 0.4
+ *
+ */
 public class TagUscite extends Tag {
 
 	@Override
