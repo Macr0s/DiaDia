@@ -50,7 +50,7 @@ public class CaricatoreLabirinto {
 			try{
 				Class<Tag> c = (Class<Tag>) Class.forName("it.uniroma3.diadia.ambienti.parser.tag.Tag"+s[0]);
 				Tag tag = c.newInstance();
-				tag.setInsiemi(this);
+				tag.setCaricatoreLabirinto(this);
 				tag.elabora(s[1]);
 			}catch(Exception e){
 				throw new FormatoFileNonValidoException(e.getMessage() + " alla riga " + numeroRiga);
