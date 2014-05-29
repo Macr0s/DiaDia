@@ -137,24 +137,26 @@ public class Partita{
 	/**
 	 * Metodo che restistuisce il labirinto corrente
 	 * 
-	 * @return
+	 * @return il labirinto
 	 */
 	public Labirinto getLabirinto() {
 		return labirinto;
 	}
 	
+	/**
+	 * Metodo che imposta il labirinto corrente
+	 * 
+	 * @param labirinto il nuovo labirinto
+	 */
 	public void setLabirinto(Labirinto labirinto) {
 		this.labirinto = labirinto;
 	}
 	
-	public Stanza getCorrente() {
-		return corrente;
-	}
-	
-	public void setCorrente(Stanza corrente) {
-		this.corrente = corrente;
-	}
-	
+	/**
+	 * Metodo che imposta il giocatore corrente
+	 * 
+	 * @param giocatore il giocatore corrente
+	 */
 	public void setGiocatore(Giocatore giocatore) {
 		this.giocatore = giocatore;
 	}
