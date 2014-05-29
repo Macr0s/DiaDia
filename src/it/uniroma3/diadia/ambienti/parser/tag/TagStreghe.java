@@ -10,6 +10,7 @@ import it.uniroma3.diadia.personaggi.Strega;
  * @author Matteo Filipi, Andrea Salvoni
  * @see Tag
  * @see FormatoFileNonValinoException
+ * @version 0.4
  *
  */
 public class TagStreghe extends Tag {
