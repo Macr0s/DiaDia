@@ -4,6 +4,14 @@ import it.uniroma3.diadia.ambienti.parser.FormatoFileNonValidoException;
 import it.uniroma3.diadia.ambienti.parser.Tag;
 import it.uniroma3.diadia.personaggi.Strega;
 
+/**
+ * Questa classe gestisce i tag Strega
+ * 
+ * @author Matteo Filipi, Andrea Salvoni
+ * @see Tag
+ * @see FormatoFileNonValinoException
+ *
+ */
 public class TagStreghe extends Tag {
 
 	@Override
