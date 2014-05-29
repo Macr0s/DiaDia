@@ -4,6 +4,15 @@ import it.uniroma3.diadia.ambienti.StanzaBuia;
 import it.uniroma3.diadia.ambienti.parser.FormatoFileNonValidoException;
 import it.uniroma3.diadia.ambienti.parser.Tag;
 
+/**
+ * Questa classe gestisce i tag StanzeBuie
+ * 
+ * @author Matteo Filippi, Andrea Salvoni
+ * @see Tag
+ * @see FormatoFileNonValidoException
+ * @version 0.4
+ *
+ */
 public class TagStanzaBuie extends Tag {
 
 	@Override
