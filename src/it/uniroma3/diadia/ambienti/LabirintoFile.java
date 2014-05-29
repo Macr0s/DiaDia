@@ -11,6 +11,7 @@ import it.uniroma3.diadia.ambienti.parser.FormatoFileNonValidoException;
  * 
  * @author  Matteo Filippi, Andrea Salvoni (da un'idea di Michael Kolling and David J. Barnes)
  * @see Stanza
+ * @see CaricatoreLabirinto
  * @version 0.3
  */
 public class LabirintoFile extends Labirinto {
