@@ -3,6 +3,14 @@ package it.uniroma3.diadia.ambienti.parser.tag;
 import it.uniroma3.diadia.ambienti.parser.FormatoFileNonValidoException;
 import it.uniroma3.diadia.ambienti.parser.Tag;
 
+/**
+ * CLasse che implementa il tag AggiuntiPersonaggi
+ * 
+ * @author MatteoFilippi, Andrea Salvoni
+ * @see Tag
+ * @see FormatoFIleNonValidoException 
+ *
+ */
 public class TagAggiungiPersonaggi extends Tag {
 
 	@Override
