@@ -4,6 +4,12 @@ import it.uniroma3.diadia.ambienti.StanzaMagica;
 import it.uniroma3.diadia.ambienti.parser.FormatoFileNonValidoException;
 import it.uniroma3.diadia.ambienti.parser.Tag;
 
+/**
+ * Questa classe gestisce i tag StanzaMagiche
+ * 
+ * @author matteo
+ *
+ */
 public class TagStanzaMagiche extends Tag {
 
 	@Override
