@@ -4,6 +4,15 @@ import it.uniroma3.diadia.ambienti.StanzaBloccata;
 import it.uniroma3.diadia.ambienti.parser.FormatoFileNonValidoException;
 import it.uniroma3.diadia.ambienti.parser.Tag;
 
+/**
+ * Questa classe gestisce il Tag Bloccate
+ * 
+ * @author Matteo Filippi, Andrea Salvoni
+ * @see Tag
+ * @see FormatoFileNonValidoException
+ * @version 0.4
+ *
+ */
 public class TagStanzaBloccate extends Tag {
 
 	@Override
