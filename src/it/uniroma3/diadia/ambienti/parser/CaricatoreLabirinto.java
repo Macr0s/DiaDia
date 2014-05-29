@@ -11,7 +11,20 @@ import it.uniroma3.diadia.Partita;
 import it.uniroma3.diadia.ambienti.Stanza;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 import it.uniroma3.diadia.personaggi.AbstractPersonaggio;
-
+/**
+ * Questa classe gestisce il caricamento di un labirinto da file
+ * 
+ * @author Matteo Filippi, Andrea Salvoni
+ * @see Stanza
+ * @see Map
+ * @see HashMap
+ * @see Formato FileNonValidoException
+ * @see Partita
+ * @see Attrezzo
+ * @see AbstractPersonaggio
+ * @version 0.4
+ *
+ */
 public class CaricatoreLabirinto {
 	private Stanza stanzaIniziale;
 	private Stanza stanzaVincente;
