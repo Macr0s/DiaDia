@@ -77,25 +77,48 @@ public class Attrezzo implements Comparable<Attrezzo> {
 		return this.nome.equals(attrezzo.getNome())
 				&& this.peso == attrezzo.getPeso();
 	}
-
+	
+	/**
+	 * Metodo che serve per generare l'hashcode dell'Attrezzo
+	 */
 	@Override
 	public int hashCode() {
 		return this.nome.hashCode() + this.peso;
 	}
 
+	/**
+	 * Metodo che server per comparare due attrezzi in base al nome
+	 */
 	@Override
 	public int compareTo(Attrezzo arg0) {
 		return this.getNome().compareTo(arg0.getNome());
 	}
-
+	
+	/**
+	 * Metodo che serve per impostare il peso dell'attrezzo
+	 * 
+	 * @param peso il nuovo peso dell'alttrezzo
+	 */
 	public void setPeso(int peso) {
 		this.peso = peso;
 	}
 	
+	/**
+	 * Metodo che serve per impostare il nome dell'alttrezzo
+	 * 
+	 * @param nome il nuovo nome dell'attrezzo
+	 */
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 	
+	/**
+	 * Metodo che determina se l'attrezzo può essere usato
+	 * 
+	 * @param parametro i parametri del comando usa
+	 * @param p la partita corrente
+	 * @return un stringa che rappresenta l'uso dell'attrezzo
+	 */
 	public String usa(String parametro, Partita p){
 		return "Questo oggetto non ha nulla";
 	}
