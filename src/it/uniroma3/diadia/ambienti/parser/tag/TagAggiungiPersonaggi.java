@@ -8,7 +8,7 @@ import it.uniroma3.diadia.ambienti.parser.Tag;
  * 
  * @author MatteoFilippi, Andrea Salvoni
  * @see Tag
- * @see FormatoFIleNonValidoException 
+ * @see FormatoFileNonValidoException 
  *
  */
 public class TagAggiungiPersonaggi extends Tag {

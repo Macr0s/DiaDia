@@ -9,7 +9,7 @@ import it.uniroma3.diadia.personaggi.Strega;
  * 
  * @author Matteo Filipi, Andrea Salvoni
  * @see Tag
- * @see FormatoFileNonValinoException
+ * @see FormatoFileNonValidoException
  * @version 0.4
  *
  */

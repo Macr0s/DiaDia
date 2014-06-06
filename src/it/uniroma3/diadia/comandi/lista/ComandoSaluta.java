@@ -8,7 +8,7 @@ import it.uniroma3.diadia.personaggi.AbstractPersonaggio;
  * 
  * @author Matteo Filippi, Andrea Salvoni
  * @see AbstractComando
- * @see AbstractPersonaggoi
+ * @see AbstractPersonaggio
  * @version 0.3
  *
  */

@@ -18,12 +18,11 @@ import it.uniroma3.diadia.personaggi.AbstractPersonaggio;
  * @see Stanza
  * @see Map
  * @see HashMap
- * @see Formato FileNonValidoException
+ * @see FormatoFileNonValidoException
  * @see Partita
  * @see Attrezzo
  * @see AbstractPersonaggio
- * @version 0.4
- *
+ * @version 0.3
  */
 public class CaricatoreLabirinto {
 	private Stanza stanzaIniziale;

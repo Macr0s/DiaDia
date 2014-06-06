@@ -9,7 +9,7 @@ import it.uniroma3.diadia.ambienti.parser.Tag;
  * @author Matteo Filippi
  * @see Tag
  * @see FormatoFileNonValidoException
- * @versione 0.4
+ * @version 0.4
  *
  */
 public class TagUscite extends Tag {
