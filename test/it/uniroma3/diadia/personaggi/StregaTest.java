@@ -9,7 +9,7 @@ public class StregaTest {
 
 	@Before
 	public void setUp() throws Exception {
-		
+		 
 	}
 
 	@Test
