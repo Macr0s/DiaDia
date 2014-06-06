@@ -17,6 +17,7 @@ public class CaricatoreLabirintoTest {
 	private final String testCodificaSempliceConErroriSintassiFile = "Stanze N10, Biblioteca\nInizio: N10\nVincente: Biblioteca";
 	private final String testCodificaTipiDiStanzaFile = "//Definizione stanza\nStanze: N10, Biblioteca\nStanzaBloccate: Campus ovest passepartout\n"+
 						"StanzaBuie: Atrio lanterna\nStanzaMagiche: N11 1\n//Definizioni condizioni di gioco\nInizio: Atrio";
+	private final String testCodificaCollegamentiFile = "Stanze: N10, Biblioteca\nInizio: N10\nVincente: Biblioteca\nUscite: N10 nord Biblioteca, Biblioteca sud N10";
 	
 	@Before
 	public void setUp() throws Exception {
@@ -70,17 +71,43 @@ public class CaricatoreLabirintoTest {
 		} catch (FormatoFileNonValidoException e) {
 			fail(e.getMessage());
 		}
-		Map<String, Stanza> listaStanze = c.getInsiemeStanza();
-		assertNotNull(listaStanze.toString(), listaStanze.get("N10"));
-		assertNotNull(listaStanze.toString(), listaStanze.get("Biblioteca"));
-		assertNotNull(listaStanze.toString(), listaStanze.get("Campus"));
-		assertNotNull(listaStanze.toString(), listaStanze.get("Atrio"));
-		assertNotNull(listaStanze.toString(), listaStanze.get("N11"));
+		Map<String, Stanza> mapStanze = c.getInsiemeStanza();
+		assertNotNull(mapStanze.toString(), mapStanze.get("N10"));
+		assertNotNull(mapStanze.toString(), mapStanze.get("Biblioteca"));
+		assertNotNull(mapStanze.toString(), mapStanze.get("Campus"));
+		assertNotNull(mapStanze.toString(), mapStanze.get("Atrio"));
+		assertNotNull(mapStanze.toString(), mapStanze.get("N11"));
 		
-		assertEquals(listaStanze.toString(), "N10", listaStanze.get("N10").getNome());
-		assertEquals(listaStanze.toString(), "Biblioteca", listaStanze.get("Biblioteca").getNome());
-		assertEquals(listaStanze.toString(), "Campus", listaStanze.get("Campus").getNome());
-		assertEquals(listaStanze.toString(), "Atrio", listaStanze.get("Atrio").getNome());
-		assertEquals(listaStanze.toString(), "N11", listaStanze.get("N11").getNome());
+		assertEquals(mapStanze.toString(), "N10", mapStanze.get("N10").getNome());
+		assertEquals(mapStanze.toString(), "Biblioteca", mapStanze.get("Biblioteca").getNome());
+		assertEquals(mapStanze.toString(), "Campus", mapStanze.get("Campus").getNome());
+		assertEquals(mapStanze.toString(), "Atrio", mapStanze.get("Atrio").getNome());
+		assertEquals(mapStanze.toString(), "N11", mapStanze.get("N11").getNome());
 	}
+	
+	 @Test
+	 public void testCodificaCollegamenti(){
+		 CaricatoreLabirinto c = new CaricatoreLabirinto(this.partita, this.testCodificaCollegamentiFile);
+		 try{
+			 c.carica();
+		 }catch(Exception ex){
+			fail(ex.getMessage());
+		 }
+		 
+		 Map<String, Stanza> mapStanze = c.getInsiemeStanza();
+		 
+		 assertNotNull(mapStanze.toString(), mapStanze.get("N10"));
+		 assertNotNull(mapStanze.toString(), mapStanze.get("Biblioteca"));
+		 
+		 assertNotNull(mapStanze.toString(), mapStanze.get("N10").getDirezioni());
+		 assertNotNull(mapStanze.toString(), mapStanze.get("Biblioteca").getDirezioni());
+		 
+		 assertNotNull(mapStanze.toString(), mapStanze.get("N10").getStanzaAdiacente("nord"));
+		 assertNotNull(mapStanze.toString(), mapStanze.get("Biblioteca").getStanzaAdiacente("sud"));
+		 
+		 assertEquals(mapStanze.toString(), "Biblioteca", mapStanze.get("N10").getStanzaAdiacente("nord").getNome());
+		 assertEquals(mapStanze.toString(), "N10", mapStanze.get("Biblioteca").getStanzaAdiacente("sud").getNome());
+	 }
+	 
+	 
 }
