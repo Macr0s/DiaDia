@@ -2,6 +2,14 @@ package it.uniroma3.diadia.comandi.lista;
 
 import it.uniroma3.diadia.comandi.AbstractComando;
 
+/**
+ * Questa classe implementa il comando Regala
+ * 
+ * @author Matteo Filippi, Andrea Salvoni
+ * @see AbstractComando
+ * @version 0.3
+ *
+ */
 public class ComandoRegala extends AbstractComando {
 	
 	@Override

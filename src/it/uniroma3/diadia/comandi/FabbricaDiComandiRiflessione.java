@@ -5,13 +5,15 @@ import java.util.Scanner;
 import it.uniroma3.diadia.Partita;
 
 /**
- * Questa classe implementa la gestione dei comandi
+ * Questa classe implementa la gestione dei comandi utilizzando il concetto
+ * di Reflessione
  * 
  * @author Matteo Filippi, Andrea Salvoni
  * @version 0.2
  * @see FabbricaDiComandi
  * @see Comando
  * @see Partita
+ * @see AbstractComando
  *
  */
 public class FabbricaDiComandiRiflessione implements FabbricaDiComandi {
