@@ -17,6 +17,7 @@ public class Strega extends AbstractPersonaggio {
 		for(String direzione: s.getDirezioni()){
 			if (s != null && massimo < s.getStanzaAdiacente(direzione).getAttrezzi().length){
 					destinazione = s.getStanzaAdiacente(direzione);
+					massimo  = s.getStanzaAdiacente(direzione).getAttrezzi().length;
 			}
 		}
 		return destinazione;
@@ -29,6 +30,7 @@ public class Strega extends AbstractPersonaggio {
 		for(String direzione: s.getDirezioni()){
 			if (s != null && (primo || minimo > s.getStanzaAdiacente(direzione).getAttrezzi().length)){
 				destinazione = s.getStanzaAdiacente(direzione);
+				minimo  = s.getStanzaAdiacente(direzione).getAttrezzi().length;
 				primo = false;
 			}
 		}
