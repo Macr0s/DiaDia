@@ -2,6 +2,12 @@ package it.uniroma3.diadia.io;
 
 import java.util.Scanner;
 
+/**
+ * Questa classe gestisce l'interfaccia utente attraverso la console
+ * 
+ * @author matteo
+ *
+ */
 public class InterfacciaUtenteConsole implements InterfacciaUtente {
 	private Scanner scanner;
 	
