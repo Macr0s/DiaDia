@@ -1,7 +1,16 @@
 package it.uniroma3.diadia.comandi;
 
 import it.uniroma3.diadia.Partita;
-
+/**
+ * Classe astratta comando che unifica tutti i comando snellendo il codice
+ * dei singoli comandi levando codice ripetitivo
+ * 
+ * @author Matteo Filippi, Andrea Salvoni
+ * @version 0.3
+ * @see Comando
+ * @see Partita
+ *
+ */
 public abstract class AbstractComando implements Comando {
 	private Partita p;
 	private String parametro;

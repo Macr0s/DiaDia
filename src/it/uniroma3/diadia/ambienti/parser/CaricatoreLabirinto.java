@@ -42,6 +42,15 @@ public class CaricatoreLabirinto {
 		this.partita = partita;
 	}
 	
+	public CaricatoreLabirinto(Partita partita, String contenuto){
+		this.insiemeAttrezzo = new HashMap<>();
+		this.insiemePersonaggio = new HashMap<>();
+		this.insiemeStanza = new HashMap<>();
+		this.partita = partita;
+		this.scanner = new Scanner(contenuto);
+		
+	}
+	
 	@SuppressWarnings("unchecked")
 	private void processaRiga(String riga, int numeroRiga) throws FormatoFileNonValidoException{
 		if (riga.startsWith("//") || riga.equals("")) return ;
