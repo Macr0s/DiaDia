@@ -17,6 +17,7 @@ public class TagStanzaMagiche extends Tag {
 		for(String stanza: argomenti.split(", ")){
 			String[] caratteristiche = stanza.split(" ");
 			super.getInsiemeStanza().put(caratteristiche[0], new StanzaMagica(caratteristiche[0], new Integer(caratteristiche[1]).intValue()));
+			super.getInsiemeStanza().get(caratteristiche[0]).setPartita(super.getPartita());
 		}
 	}
 

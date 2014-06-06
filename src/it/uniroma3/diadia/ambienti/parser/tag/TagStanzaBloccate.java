@@ -20,6 +20,7 @@ public class TagStanzaBloccate extends Tag {
 		for(String stanza: argomenti.split(", ")){
 			String[] caratteristiche = stanza.split(" ");
 			this.getInsiemeStanza().put(caratteristiche[0], new StanzaBloccata(caratteristiche[0], caratteristiche[1], caratteristiche[1]));
+			super.getInsiemeStanza().get(caratteristiche[0]).setPartita(super.getPartita());
 		}
 	}
 
