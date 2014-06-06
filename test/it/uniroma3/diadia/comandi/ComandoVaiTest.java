@@ -23,7 +23,7 @@ public class ComandoVaiTest {
 	public void testEsegui_ConDirezione() {
 		assertEquals(this.partita.toString(), "Atrio", this.partita.getStanzaCorrente().getNome());
 		this.comandoVai.esegui();
-		assertEquals(this.partita.toString(), "Laboratorio Campus", this.partita.getStanzaCorrente().getNome());
+		assertEquals(this.partita.toString(), "Campus", this.partita.getStanzaCorrente().getNome());
 	}
 	
 	@Test
@@ -32,7 +32,7 @@ public class ComandoVaiTest {
 		this.comandoVai.esegui();
 		this.comandoVai.setParamentro("nord");
 		this.comandoVai.esegui();
-		assertEquals(this.partita.toString(), "Laboratorio Campus", this.partita.getStanzaCorrente().getNome());
+		assertEquals(this.partita.toString(), "Campus", this.partita.getStanzaCorrente().getNome());
 	}
 
 }
