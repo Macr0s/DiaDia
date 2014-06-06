@@ -6,6 +6,7 @@ import it.uniroma3.diadia.attrezzi.Attrezzo;
 public class Cane extends AbstractPersonaggio {
 	private String cibo;
 	private Attrezzo regalo;
+	private boolean ricevutoRegalo = false;
 	
 	public Cane(String nome, String presentaz, String cibo, Attrezzo regalo) {
 		super(nome, presentaz);
@@ -21,8 +22,9 @@ public class Cane extends AbstractPersonaggio {
 
 	@Override
 	public String riceviRegalo(Attrezzo attrezzo, Partita partita) {
-		if (attrezzo.getNome().equals(this.cibo)){
+		if (attrezzo.getNome().equals(this.cibo) && !this.ricevutoRegalo){
 			partita.getStanzaCorrente().addAttrezzo(this.regalo);
+			this.ricevutoRegalo = true;
 			return "Il cane apprezza il cibo e ti fa un regalo... Guarda in terra";
 		}else{
 			partita.getStanzaCorrente().addAttrezzo(attrezzo);
