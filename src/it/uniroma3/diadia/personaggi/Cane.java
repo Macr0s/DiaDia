@@ -3,6 +3,16 @@ package it.uniroma3.diadia.personaggi;
 import it.uniroma3.diadia.Partita;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 
+/**
+ * Questa classe rappresenta il personaggio Cane
+ * 
+ * @author Matteo Filippi, Andrea Salvoni
+ * @see AbstractPersonaggio
+ * @see Attrezzo
+ * @see Partita
+ * @version 0.3
+ *
+ */
 public class Cane extends AbstractPersonaggio {
 	private String cibo;
 	private Attrezzo regalo;

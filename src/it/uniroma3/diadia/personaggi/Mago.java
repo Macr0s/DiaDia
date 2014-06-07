@@ -3,6 +3,16 @@ package it.uniroma3.diadia.personaggi;
 import it.uniroma3.diadia.Partita;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 
+/**
+ * Questa classe rappresenta il personaggio Mago
+ * 
+ * @author Matteo Filippi, Andrea Salvoni
+ * @see AbstractPersonaggio
+ * @see Partita
+ * @see Attrezzo
+ * @version 0.3
+ *
+ */
 public class Mago extends AbstractPersonaggio {
 	private static final String MESSAGGIO_DONO = "Sei un vero simpaticone, " + 
 			"con una mia magica azione, troverai un nuovo oggetto " + 

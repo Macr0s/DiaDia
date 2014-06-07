@@ -4,6 +4,17 @@ import it.uniroma3.diadia.Partita;
 import it.uniroma3.diadia.ambienti.Stanza;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 
+/**
+ * Questa classe rappresenta il personaggio Strega
+ * 
+ * @author Matteo Filippi, Andrea Salvoni
+ * @see Stanza
+ * @see AbstractPersonaggio
+ * @see Attrezzo
+ * @see Partita
+ * @version 0.3
+ *
+ */
 public class Strega extends AbstractPersonaggio {
 
 	public Strega(String nome, String presentaz) {
