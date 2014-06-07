@@ -8,7 +8,7 @@ import it.uniroma3.diadia.attrezzi.Attrezzo;
  * dalle varie classi che rappresentano i personaggi
  * 
  * @author Matteo Filippi, Andrea Salvoni
- * @versione 0.3
+ * @version 0.3
  *
  */
 public abstract class AbstractPersonaggio {
