@@ -2,6 +2,15 @@ package it.uniroma3.diadia.attrezzi;
 
 import it.uniroma3.diadia.Partita;
 
+/**
+ * Questa classe gestisce i tipi di attrezzo Pozione
+ * 
+ * @author Matteo Filippi, Andrea Salvoni
+ * @see Attrezzo
+ * @see Partita
+ * @version 0.3
+ *
+ */
 public class Pozione extends Attrezzo {
 	private static final int DEFAULT_SOMMA = 2;
 	private int somma;
